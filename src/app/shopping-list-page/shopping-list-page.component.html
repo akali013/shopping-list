@@ -1,0 +1,41 @@
+<div class="container">
+  <app-search-bar></app-search-bar>
+
+  <div class="shopping-list-container" *ngIf="listItems.length > 0">
+    <ul class="shopping-list">
+      <li *ngFor="let item of listItems" class="list-item">
+        {{item.name}}
+
+        <div class="button-container">
+          <button class="check-button" (click)="checkItem(item)" *ngIf="!item.isChecked">
+            <img src="../../assets/images/check.svg" class="check-image">
+
+            <div class="button-tooltip">
+              Check
+            </div>
+          </button>
+
+          <button class="check-button" (click)="checkItem(item)" *ngIf="item.isChecked">
+            <img src="../../assets/images/uncheck.svg" class="uncheck-image">
+
+            <div class="button-tooltip">
+              Uncheck
+            </div>
+          </button>
+
+          <button class="delete-button" (click)="deleteItem(item)">
+            <img src="../../assets/images/delete.svg" class="delete-image">
+
+            <div class="button-tooltip">
+              Delete
+            </div>
+          </button>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <div class="empty-list-text" *ngIf="listItems.length <= 0">
+    No items found.
+  </div>
+</div>

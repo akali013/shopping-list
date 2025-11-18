@@ -1,0 +1,44 @@
+.container {
+  margin: 5% 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+.items-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  row-gap: 50px;
+  column-gap: 200px;
+  margin-top: 5%;
+}
+
+.grid-button {
+  font-family: "Manrope";
+  width: 300px;
+  height: 250px;
+  font-size: 36px;
+  background-color: #7cff9d;
+  cursor: pointer;
+  transition: box-shadow 0.15s;
+}
+
+.grid-button:hover {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.336);
+}
+
+.grid-button:active {
+  box-shadow: none;
+}
+
+.add-confirmation {
+  position: fixed;
+  font-size: 20px;
+  color: purple;
+  right: 3%;
+  bottom: 3%;
+  background-color: rgb(252, 239, 215);
+  font-weight: bold;
+  padding: 20px;
+}

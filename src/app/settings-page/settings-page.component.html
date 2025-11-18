@@ -1,0 +1,18 @@
+<div class="container">
+  <h2>Credentials</h2>
+
+  <form class="settings-form" [formGroup]="credentialsForm" (ngSubmit)="saveCredentials()">
+    <input class="settings-input" type="email" formControlName="password" placeholder="New email..." />
+    <input class="settings-input" type="text" formControlName="email" placeholder="New password..." />
+
+    <div class="buttons-container">
+      <button class="edit-button" *ngIf="!isEditing" (click)="editCredentials()">
+        Edit
+      </button>
+
+      <button class="save-button" type="submit" *ngIf="isEditing">
+        Save
+      </button>
+    </div>
+  </form>
+</div>

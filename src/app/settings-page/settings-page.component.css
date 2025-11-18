@@ -1,0 +1,46 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10%;
+}
+
+.settings-form {
+  display: flex;
+  flex-direction: column;
+  height: 50%;
+  width: 30%;
+}
+
+.settings-input {
+  padding: 3%;
+  font-size: 16px;
+  margin-top: 25px;
+}
+
+.buttons-container {
+  display: flex;
+  justify-content: end;
+}
+
+.edit-button {
+  padding: 10px 15px;
+  background-color: orange;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.save-button {
+  padding: 10px 15px;
+  color: white;
+  background-color: rgb(33, 187, 136);
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  margin-top: 5px;
+  cursor: pointer;
+}

@@ -1,0 +1,89 @@
+button {
+  padding: 10px;
+  margin: 10px;
+  background-color: rgb(66, 66, 66);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+img {
+  object-fit: contain;
+  object-position: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10vh;
+  font-size: 25px;
+}
+
+.shopping-list-container {
+  margin-top: 15vh;
+  width: 100%;
+}
+
+.shopping-list {
+  padding: 0;
+  list-style: none;
+}
+
+.list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 2px solid black;
+  padding: 0 20px;
+  margin: 1%;
+}
+
+.check-button, .delete-button {
+  position: relative;
+}
+
+.button-tooltip {
+  position: absolute;
+  right: 1%;
+  bottom: -45%;
+  color: white;
+  background-color: black;
+  padding: 4px;
+  pointer-events: none;
+  font-weight: 500;
+  font-size: 18px;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.check-button:hover .button-tooltip,
+.delete-button:hover .button-tooltip {
+  opacity: 1;
+}
+
+.check-image {
+  width: 50px;
+  /*
+  Source - https://stackoverflow.com/a
+  Posted by Manish Menaria, modified by community. See post 'Timeline' for change history
+  Retrieved 2025-11-07, License - CC BY-SA 4.0
+  */
+  filter: invert(42%) sepia(93%) saturate(1352%) hue-rotate(87deg) brightness(100%) contrast(119%);
+}
+
+.uncheck-image {
+  width: 50px;
+  filter: invert(16%) sepia(88%) saturate(7500%) hue-rotate(0deg) brightness(104%) contrast(118%);
+}
+
+.delete-image {
+  width: 50px;
+  filter: invert(16%) sepia(88%) saturate(90000%) hue-rotate(0deg) brightness(104%) contrast(118%);
+}
+
+.empty-list-text {
+  margin-top: 10%;
+  font-weight: 600;
+  font-size: 43px;
+}

@@ -1,0 +1,50 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20vh;
+}
+
+.create-form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 5vh;
+}
+
+.create-label {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.create-input {
+  padding: 5px;
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+}
+
+.submit-button {
+  background-color: aquamarine;
+  padding: 3% 15%;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.create-confirmation {
+  font-weight: 300;
+  color: green;
+  margin-top: 3%;
+}
+
+.error-message {
+  font-weight: 400;
+  color: red;
+  margin-top: 3%;
+}

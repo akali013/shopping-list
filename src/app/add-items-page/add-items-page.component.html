@@ -1,0 +1,19 @@
+<div class="container">
+  <app-search-bar (searchEvent)="onSearch($event)"></app-search-bar>
+
+  <div class="items-grid" *ngIf="searchedItems.length > 0">
+    <button class="grid-button" *ngFor="let item of searchedItems" (click)="addItem(item)">
+      {{item.name}}
+    </button>
+  </div>
+
+  <div class="items-grid" *ngIf="searchedItems.length <= 0">
+    <button class="grid-button" *ngFor="let item of listItems" (click)="addItem(item)">
+      {{item.name}}
+    </button>
+  </div>
+
+  <div class="add-confirmation" *ngIf="showConfirmation">
+    Added!
+  </div>
+</div>

@@ -1,0 +1,80 @@
+.header-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2%;
+  background-color: rgb(233, 255, 111);
+  height: 75px;
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.left-section {
+  white-space: nowrap;
+}
+
+.home-link {
+  color: rgb(89, 0, 161);
+  text-decoration: none;
+}
+
+.right-section {
+  display: flex;
+  margin-right: 13%;
+}
+
+.add-button,
+.settings-button,
+.create-button {
+  position: relative;
+  margin-left: 20%;
+  padding: 2%;
+  background-color: snow;
+  border: none;
+  cursor: pointer;
+}
+
+.button-tooltip {
+  position: absolute;
+  bottom: -60%;
+  right: -14%;
+  color: white;
+  background-color: black;
+  padding: 4px;
+  pointer-events: none;
+  font-weight: 500;
+  font-size: 18px;
+  opacity: 0;
+  transition: opacity 0.5s;
+  white-space: nowrap;
+}
+
+.add-button:hover .button-tooltip,
+.settings-button:hover .button-tooltip,
+.create-button:hover .button-tooltip {
+  opacity: 1;
+}
+
+.add-image {
+  width: 40px;
+  /*
+  Source - https://stackoverflow.com/a
+  Posted by Manish Menaria, modified by community. See post 'Timeline' for change history
+  Retrieved 2025-11-07, License - CC BY-SA 4.0
+  */
+  filter: invert(46%) sepia(80%) saturate(2746%) hue-rotate(174deg) brightness(105%) contrast(104%);
+}
+
+.settings-image {
+  width: 40px;
+  filter: invert(51%) sepia(0%) saturate(1674%) hue-rotate(188deg) brightness(98%) contrast(91%);
+}
+
+.create-image {
+  width: 40px;
+  filter: invert(63%) sepia(40%) saturate(7149%) hue-rotate(89deg) brightness(117%) contrast(112%);
+}

@@ -1,0 +1,19 @@
+<div class="container">
+  <h1>Create New Item</h1>
+  <form [formGroup]="createItemForm" (ngSubmit)="submitForm()" class="create-form">
+    <label for="itemName" class="create-label">Name:</label>
+    <input id="itemName" type="text" placeholder="Name..." class="create-input" formControlName="itemName" />
+
+    <div class="button-container">
+      <button type="submit" class="submit-button">Add</button>
+    </div>
+  </form>
+
+  <div class="create-confirmation" *ngIf="showConfirmation">
+    Item Created!
+  </div>
+
+  <div class="error-message" *ngIf="showError">
+    {{httpError}}
+  </div>
+</div>

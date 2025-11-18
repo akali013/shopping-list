@@ -1,0 +1,30 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20vh;
+  font-size: 24px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-input {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 20px;
+  padding: 10px;
+}
+
+.submit-button {
+  margin-top: 10%;
+  background-color: rgb(107, 238, 107);
+  padding: 25px;
+  font-size: 28px;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
