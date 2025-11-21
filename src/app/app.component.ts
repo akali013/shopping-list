@@ -10,10 +10,12 @@ import { ErrorService } from './_services/error.service';
 })
 export class AppComponent {
   user?: User | null;
-  errorMessage = this.errorService.errorMessage;
-  showError = this.errorService.showError;
+  errorMessage = "";
+  showError = false;
 
   constructor(private authenticationService: AuthenticationService, private errorService: ErrorService) {
     this.authenticationService.user.subscribe(u => this.user = u);
+    this.errorService.errorMessage.subscribe(message => this.errorMessage = message);
+    this.errorService.showError.subscribe(bool => this.showError = bool);
   }
 }
