@@ -5,13 +5,14 @@ import { ShoppingListPageComponent } from './shopping-list-page/shopping-list-pa
 import { AddItemsPageComponent } from './add-items-page/add-items-page.component';
 import { SettingsPageComponent } from './settings-page/settings-page.component';
 import { CreateItemPageComponent } from './create-item-page/create-item-page.component';
+import { AuthGuard } from './_auth/auth.guard';
 
 const routes: Routes = [
   {path: "login", component: LoginPageComponent},
-  {path: "home", component: ShoppingListPageComponent},
-  {path: "add", component: AddItemsPageComponent},
-  {path: "settings", component: SettingsPageComponent},
-  {path: "create", component: CreateItemPageComponent},
+  {path: "home", component: ShoppingListPageComponent, canActivate: [AuthGuard]},
+  {path: "add", component: AddItemsPageComponent, canActivate: [AuthGuard]},
+  {path: "settings", component: SettingsPageComponent, canActivate: [AuthGuard]},
+  {path: "create", component: CreateItemPageComponent, canActivate: [AuthGuard]},
   {path: "**", redirectTo: "home", pathMatch: "full"}
 ];
 

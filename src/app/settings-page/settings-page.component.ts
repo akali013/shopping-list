@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { AuthenticationService } from '../_services/authentication.service';
 
 @Component({
   selector: 'app-settings-page',
@@ -35,7 +36,11 @@ export class SettingsPageComponent implements OnInit {
     console.log(this.credentialsForm.value);
   }
 
-  constructor() { }
+  logout() {
+    this.authenticationService.logout();
+  }
+
+  constructor(private authenticationService: AuthenticationService) { }
 
   ngOnInit(): void {
   }

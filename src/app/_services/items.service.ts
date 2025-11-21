@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, Observable, of, tap } from 'rxjs';
-import { ShoppingListItem } from '../models/shopping-list-item';
+import { ShoppingListItem } from '../_models/shopping-list-item';
 import { environment } from 'src/environments/environment';
 
 @Injectable({

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { ItemsService } from '../services/items.service';
+import { ItemsService } from '../_services/items.service';
 
 @Component({
   selector: 'app-create-item-page',
@@ -17,6 +17,13 @@ export class CreateItemPageComponent implements OnInit {
   httpError: string = "";
 
   submitForm() {
+    if (this.createItemForm.invalid) {
+      this.showError = true;
+      this.httpError = "You must enter a name.";
+      setTimeout(() => this.showError = false, 2000);
+      return;
+    }
+    
     this.itemsService.addItem(this.createItemForm.get("itemName")?.value!).subscribe({
       next: () => {
         this.showConfirmation = true;
@@ -24,7 +31,7 @@ export class CreateItemPageComponent implements OnInit {
       },
       error: (err) => {
         this.showError = true;
-        this.httpError = err.error;
+        this.httpError = err;
         setTimeout(() => this.showError = false, 2000);
       }
     });

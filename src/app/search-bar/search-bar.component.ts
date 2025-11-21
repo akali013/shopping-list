@@ -1,5 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { ItemsService } from "../services/items.service";
+import { ItemsService } from "../_services/items.service";
 
 @Component({
   selector: 'app-search-bar',
