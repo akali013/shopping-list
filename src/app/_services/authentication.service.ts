@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { HttpClient } from '@angular/common/http';
-import { BehaviorSubject, Observable, map } from 'rxjs';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { BehaviorSubject, Observable, catchError, map, of, tap } from 'rxjs';
 
 import { environment } from 'src/environments/environment';
 import { User } from '../_models/user';
@@ -12,6 +12,10 @@ import { User } from '../_models/user';
 export class AuthenticationService {
   private userSubject: BehaviorSubject<User | null>;
   public user: Observable<User | null>;
+  httpOptions = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
+    withCredentials: true
+  };
 
   constructor(
     private router: Router,
@@ -26,7 +30,7 @@ export class AuthenticationService {
   }
 
   login(email: string, password: string): Observable<User> {
-    return this.http.post<any>(`${environment.apiUrl}/users/login`, {email, password}, {withCredentials: true}).pipe(
+    return this.http.post<any>(`${environment.apiUrl}/users/login`, { email, password }, this.httpOptions).pipe(
       map(user => {
         this.userSubject.next(user);
         this.startRefreshTokenTimer();
@@ -36,19 +40,26 @@ export class AuthenticationService {
   }
 
   logout(): void {
-    this.http.post<any>(`${environment.apiUrl}/users/revoke-token`, {}, {withCredentials: true}).subscribe();
+    this.http.post<any>(`${environment.apiUrl}/users/revoke-token`, {}, this.httpOptions).subscribe();
     this.stopRefreshTokenTimer();
     this.userSubject.next(null);
     this.router.navigate(["/login"]);
   }
 
   refreshToken(): Observable<User> {
-    return this.http.post<any>(`${environment.apiUrl}/users/refresh-token`, {}, {withCredentials: true}).pipe(
+    return this.http.post<any>(`${environment.apiUrl}/users/refresh-token`, {}, this.httpOptions).pipe(
       map(user => {
         this.userSubject.next(user);
         this.startRefreshTokenTimer();
         return user;
       })
+    );
+  }
+
+  changeCredentials(email: string, password: string): Observable<any> {
+    return this.http.put<any>(`${environment.apiUrl}/users/credentials`, { email, password }, this.httpOptions).pipe(
+      tap(_ => console.log("Changed credentials")),
+      catchError(this.handleError("changeCredentials", ""))
     );
   }
 
@@ -68,5 +79,12 @@ export class AuthenticationService {
 
   private stopRefreshTokenTimer(): void {
     clearTimeout(this.refreshTokenTimeout);
+  }
+
+  handleError<T>(operation = "operation", result?: T) {
+    return (error: any): Observable<T> => {
+      console.error(`${operation}: ${error}`);
+      return of(result as T);
+    }
   }
 }

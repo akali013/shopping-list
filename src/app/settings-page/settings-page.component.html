@@ -1,9 +1,9 @@
 <div class="container">
-  <h2>Credentials</h2>
+  <h2>Change Email and Password</h2>
 
   <form class="settings-form" [formGroup]="credentialsForm" (ngSubmit)="saveCredentials()">
-    <input class="settings-input" type="email" formControlName="password" placeholder="New email..." />
-    <input class="settings-input" type="text" formControlName="email" placeholder="New password..." />
+    <input class="settings-input" type="email" formControlName="email" placeholder="New email..." />
+    <input class="settings-input" type="password" formControlName="password" placeholder="New password..." />
 
     <div class="buttons-container">
       <button class="edit-button" *ngIf="!isEditing" (click)="editCredentials()">
@@ -20,5 +20,9 @@
     <button class="logout-button" (click)="logout()">
       Log Out
     </button>
+  </div>
+
+  <div class="confirmation-popup" *ngIf="showConfirmation">
+    Credentials updated!
   </div>
 </div>

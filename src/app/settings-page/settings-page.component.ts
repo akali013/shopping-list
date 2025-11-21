@@ -9,6 +9,7 @@ import { AuthenticationService } from '../_services/authentication.service';
 })
 export class SettingsPageComponent implements OnInit {
   isEditing: boolean = false;
+  showConfirmation = false;
 
   credentialsForm = new FormGroup({
     email: new FormControl({value: "", disabled: !this.isEditing}, Validators.required),
@@ -33,7 +34,13 @@ export class SettingsPageComponent implements OnInit {
     this.isEditing = false;
     this.email?.disable();
     this.password?.disable();
-    console.log(this.credentialsForm.value);
+    
+    this.authenticationService.changeCredentials(this.email?.value!, this.password?.value!).subscribe({
+      next: () => {
+        this.showConfirmation = true;
+        setTimeout(() => this.showConfirmation = false, 3000);
+      }
+    });
   }
 
   logout() {

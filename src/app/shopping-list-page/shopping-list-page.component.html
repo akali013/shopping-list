@@ -35,7 +35,11 @@
     </ul>
   </div>
 
-  <div class="empty-list-text" *ngIf="listItems.length <= 0">
+  <div class="loading-text" *ngIf="loading">
+    Loading...
+  </div>
+
+  <div class="empty-list-text" *ngIf="listItems.length <= 0 && !loading">
     No items found.
   </div>
 </div>

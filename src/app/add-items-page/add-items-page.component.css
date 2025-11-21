@@ -31,14 +31,3 @@
 .grid-button:active {
   box-shadow: none;
 }
-
-.add-confirmation {
-  position: fixed;
-  font-size: 20px;
-  color: purple;
-  right: 3%;
-  bottom: 3%;
-  background-color: rgb(252, 239, 215);
-  font-weight: bold;
-  padding: 20px;
-}

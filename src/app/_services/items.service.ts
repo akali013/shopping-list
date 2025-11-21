@@ -10,7 +10,8 @@ import { Item } from '../_models/item';
 export class ItemsService {
   apiUrl = `${environment.apiUrl}/items`;    // Maps to Items controller
   httpOptions = {
-    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
+    withCredentials: true
   };
 
   getItems(): Observable<Item[]> {
