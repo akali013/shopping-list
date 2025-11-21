@@ -9,6 +9,7 @@
 .login-form {
   display: flex;
   flex-direction: column;
+  width: 50%;
 }
 
 .login-input {
@@ -27,9 +28,4 @@
   border: none;
   border-radius: 10px;
   cursor: pointer;
-}
-
-.error-message {
-  color: red;
-  max-width: 75%;
 }

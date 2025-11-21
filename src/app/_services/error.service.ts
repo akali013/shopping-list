@@ -1,15 +1,16 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ErrorService {
-  showError = false;
-  errorMessage = "";
+  showError: BehaviorSubject<boolean> = new BehaviorSubject(false);
+  errorMessage: BehaviorSubject<string> = new BehaviorSubject("");
 
   showErrorMessage() {
-    this.showError = true;
-    setTimeout(() => this.showError = false, 2000);
+    this.showError.next(true);
+    setTimeout(() => this.showError.next(false), 2000);
   }
 
   constructor() { }
