@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { ShoppingListItemService } from '../shopping-list-item.service';
+import { ShoppingListItemService } from '../_services/shopping-list-item.service';
 
 describe('ShoppingListItemService', () => {
   let service: ShoppingListItemService;

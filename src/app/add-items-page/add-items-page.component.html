@@ -2,13 +2,13 @@
   <app-search-bar (searchEvent)="onSearch($event)"></app-search-bar>
 
   <div class="items-grid" *ngIf="searchedItems.length > 0">
-    <button class="grid-button" *ngFor="let item of searchedItems" (click)="addItem(item)">
+    <button class="grid-button" *ngFor="let item of searchedItems" (click)="addItem(item.name)">
       {{item.name}}
     </button>
   </div>
 
   <div class="items-grid" *ngIf="searchedItems.length <= 0">
-    <button class="grid-button" *ngFor="let item of listItems" (click)="addItem(item)">
+    <button class="grid-button" *ngFor="let item of listItems" (click)="addItem(item.name)">
       {{item.name}}
     </button>
   </div>

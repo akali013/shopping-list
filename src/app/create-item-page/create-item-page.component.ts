@@ -24,7 +24,7 @@ export class CreateItemPageComponent implements OnInit {
       return;
     }
     
-    this.itemsService.addItem(this.createItemForm.get("itemName")?.value!).subscribe({
+    this.itemsService.createItem(this.createItemForm.get("itemName")?.value!).subscribe({
       next: () => {
         this.showConfirmation = true;
         setTimeout(() => this.showConfirmation = false, 2000);
