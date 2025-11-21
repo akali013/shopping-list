@@ -5,3 +5,25 @@ body {
   margin-top: 75px;
   font-family: "Manrope", Arial;
 }
+
+.confirmation-popup {
+  position: fixed;
+  font-size: 20px;
+  color: purple;
+  right: 3%;
+  bottom: 3%;
+  background-color: rgb(252, 239, 215);
+  font-weight: bold;
+  padding: 20px;
+}
+
+.error-popup {
+  position: fixed;
+  font-size: 20px;
+  color: red;
+  right: 3%;
+  bottom: 3%;
+  background-color: rgb(252, 239, 215);
+  font-weight: bold;
+  padding: 20px;
+}

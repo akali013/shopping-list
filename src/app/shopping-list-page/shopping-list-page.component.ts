@@ -9,9 +9,16 @@ import { ShoppingListItemService } from '../_services/shopping-list-item.service
 })
 export class ShoppingListPageComponent implements OnInit {
   listItems: ShoppingListItem[] = [];
+  loading = false;
 
   getItems() {
-    this.shoppingListService.getItems().subscribe(items => this.listItems = items);
+    this.loading = true;
+    this.shoppingListService.getItems().subscribe({
+      next: (items) => {
+        this.listItems = items;
+        this.loading = false;
+      }
+    });
   }
 
   checkItem(item: ShoppingListItem) {

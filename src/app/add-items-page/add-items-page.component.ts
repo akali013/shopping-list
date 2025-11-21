@@ -14,7 +14,7 @@ export class AddItemsPageComponent implements OnInit {
   listItems: Item[] = [];
   searchedItems: Item[] = [];
   private searchTerms = new Subject<string>();
-  showConfirmation: boolean = false;
+  showConfirmation = false;
 
   addItem(itemName: string) {
     this.shoppingListService.addItem(itemName).subscribe({
@@ -22,7 +22,7 @@ export class AddItemsPageComponent implements OnInit {
         this.showConfirmation = true;
         setTimeout(() => this.showConfirmation = false, 2000);
       }
-    })
+    });
   }
 
   getItems() {
