@@ -2,11 +2,12 @@ import { Injectable } from '@angular/core';
 import { HttpRequest, HttpHandler, HttpEvent, HttpInterceptor } from '@angular/common/http';
 import { Observable, throwError, catchError } from 'rxjs';
 import { AuthenticationService } from '../_services/authentication.service';
+import { ErrorService } from '../_services/error.service';
 
 @Injectable()
 export class ErrorInterceptor implements HttpInterceptor {
 
-  constructor(private authenticationService: AuthenticationService) { }
+  constructor(private authenticationService: AuthenticationService, private errorService: ErrorService) { }
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     return next.handle(request).pipe(catchError(err => {
@@ -17,6 +18,8 @@ export class ErrorInterceptor implements HttpInterceptor {
 
       const error = (err && err.error && err.error.message) || err.statusText;
       console.error(err);
+      this.errorService.errorMessage = error;
+      this.errorService.showErrorMessage();
       return throwError(() => error);
     }));
   }

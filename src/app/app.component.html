@@ -1,2 +1,5 @@
 <app-header *ngIf="user"></app-header>
 <router-outlet></router-outlet>
+<div class="error-popup" *ngIf="showError">
+  Error: {{errorMessage}}
+</div>
