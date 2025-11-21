@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ShoppingListItem } from '../models/shopping-list-item';
-import { ItemsService } from '../services/items.service';
+import { ShoppingListItem } from '../_models/shopping-list-item';
+import { ItemsService } from '../_services/items.service';
 import { Observable, Subject, debounceTime, distinctUntilChanged, switchMap } from 'rxjs';
 
 @Component({

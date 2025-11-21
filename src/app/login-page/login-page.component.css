@@ -28,3 +28,8 @@
   border-radius: 10px;
   cursor: pointer;
 }
+
+.error-message {
+  color: red;
+  max-width: 75%;
+}

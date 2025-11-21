@@ -44,3 +44,15 @@
   margin-top: 5px;
   cursor: pointer;
 }
+
+.logout-button {
+  background-color: rgb(255, 46, 46);
+  color: white;
+  margin-top: 30vh;
+  padding: 15px;
+  font-size: 20px;
+  border: none;
+  white-space: nowrap;
+  border-radius: 10px;
+  cursor: pointer;
+}
