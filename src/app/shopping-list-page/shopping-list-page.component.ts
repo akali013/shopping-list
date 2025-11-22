@@ -9,6 +9,7 @@ import { ShoppingListItemService } from '../_services/shopping-list-item.service
 })
 export class ShoppingListPageComponent implements OnInit {
   listItems: ShoppingListItem[] = [];
+  searchedItems: ShoppingListItem[] = [];
   loading = false;
 
   getItems() {
@@ -17,6 +18,7 @@ export class ShoppingListPageComponent implements OnInit {
       next: (items) => {
         this.listItems = items;
         this.loading = false;
+        this.sortItems();
       }
     });
   }
@@ -24,6 +26,7 @@ export class ShoppingListPageComponent implements OnInit {
   checkItem(item: ShoppingListItem) {
     item.isChecked = !item.isChecked;
     this.shoppingListService.updateItem(item).subscribe();
+    this.sortItems();
   }
 
   deleteItem(item: ShoppingListItem) {
@@ -31,6 +34,17 @@ export class ShoppingListPageComponent implements OnInit {
       next: () => {
         this.listItems = this.listItems.filter(i => i.name !== item.name);
       }
+    });
+  }
+
+  searchItems(term: string) {
+    this.searchedItems = this.listItems.filter(item => item.name.toUpperCase().includes(term.toUpperCase()));
+  }
+
+  // Returns the shopping list of items where checked items are at the bottom.
+  sortItems(): void {
+    this.listItems.sort((a, b) => {
+      return Number(a.isChecked) - Number(b.isChecked);
     });
   }
 
