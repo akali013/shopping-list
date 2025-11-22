@@ -16,10 +16,17 @@ export class ErrorInterceptor implements HttpInterceptor {
         this.authenticationService.logout();
       }
 
-      const error = (err && err.error && err.error.message) || err.statusText;
-      this.errorService.errorMessage.next(error);
-      this.errorService.showErrorMessage();
+      let error = (err && err.error && err.error.message) || err.statusText;
+      if (error !== "Invalid token") {
+        if (error == "Unknown Error") {
+          error = "Please try again later";
+        }
+
+        this.errorService.errorMessage.next(error);
+        this.errorService.showErrorMessage();
+      }
       return throwError(() => error);
+
     }));
   }
 }
