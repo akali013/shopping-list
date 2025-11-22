@@ -4,7 +4,7 @@
   <div class="shopping-list-container" *ngIf="listItems.length > 0">
     <ul class="shopping-list">
       <li *ngFor="let item of listItems" class="list-item">
-        {{item.name}}
+        {{item.name}} ({{item.quantity}})
 
         <div class="button-container">
           <button class="check-button" (click)="checkItem(item)" *ngIf="!item.isChecked">

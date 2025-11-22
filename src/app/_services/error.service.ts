@@ -10,7 +10,7 @@ export class ErrorService {
 
   showErrorMessage() {
     this.showError.next(true);
-    setTimeout(() => this.showError.next(false), 2000);
+    setTimeout(() => this.showError.next(false), 5000);
   }
 
   constructor() { }
