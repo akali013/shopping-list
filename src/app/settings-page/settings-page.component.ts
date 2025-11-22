@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { AuthenticationService } from '../_services/authentication.service';
+import { ErrorService } from '../_services/error.service';
 
 @Component({
   selector: 'app-settings-page',
@@ -12,8 +13,8 @@ export class SettingsPageComponent implements OnInit {
   showConfirmation = false;
 
   credentialsForm = new FormGroup({
-    email: new FormControl({value: "", disabled: !this.isEditing}, Validators.required),
-    password: new FormControl({value: "", disabled: !this.isEditing}, Validators.required)
+    email: new FormControl({ value: "", disabled: !this.isEditing }, Validators.required),
+    password: new FormControl({ value: "", disabled: !this.isEditing }, Validators.required)
   });
 
   get email() {
@@ -34,20 +35,26 @@ export class SettingsPageComponent implements OnInit {
     this.isEditing = false;
     this.email?.disable();
     this.password?.disable();
-    
-    this.authenticationService.changeCredentials(this.email?.value!, this.password?.value!).subscribe({
-      next: () => {
-        this.showConfirmation = true;
-        setTimeout(() => this.showConfirmation = false, 3000);
-      }
-    });
+
+    if (this.email?.value == "" || this.password?.value == "") {
+      this.errorService.errorMessage.next("You must enter an email and password.");
+      this.errorService.showErrorMessage();
+    }
+    else {
+      this.authenticationService.changeCredentials(this.email?.value!, this.password?.value!).subscribe({
+        next: () => {
+          this.showConfirmation = true;
+          setTimeout(() => this.showConfirmation = false, 3000);
+        }
+      });
+    }
   }
 
   logout() {
     this.authenticationService.logout();
   }
 
-  constructor(private authenticationService: AuthenticationService) { }
+  constructor(private authenticationService: AuthenticationService, private errorService: ErrorService) { }
 
   ngOnInit(): void {
   }

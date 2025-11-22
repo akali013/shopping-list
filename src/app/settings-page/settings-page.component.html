@@ -2,8 +2,8 @@
   <h2>Change Email and Password</h2>
 
   <form class="settings-form" [formGroup]="credentialsForm" (ngSubmit)="saveCredentials()">
-    <input class="settings-input" type="email" formControlName="email" placeholder="New email..." />
-    <input class="settings-input" type="password" formControlName="password" placeholder="New password..." />
+    <input class="settings-input" type="email" formControlName="email" placeholder="New email..." required />
+    <input class="settings-input" type="password" formControlName="password" placeholder="New password..." required />
 
     <div class="buttons-container">
       <button class="edit-button" *ngIf="!isEditing" (click)="editCredentials()">
