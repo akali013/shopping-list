@@ -13,7 +13,7 @@ export class SettingsPageComponent implements OnInit {
   isEditing: boolean = false;
 
   credentialsForm = new FormGroup({
-    email: new FormControl({ value: "", disabled: !this.isEditing }, Validators.required),
+    email: new FormControl({ value: this.authenticationService.userValue?.email, disabled: !this.isEditing }, Validators.required),
     password: new FormControl({ value: "", disabled: !this.isEditing }, Validators.required)
   });
 
