@@ -14,7 +14,7 @@ export class AuthenticationService {
   public user: Observable<User | null>;
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
-    withCredentials: true
+    withCredentials: true     // Allows the refresh token in the cookies to be read
   };
 
   constructor(
