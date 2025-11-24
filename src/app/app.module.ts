@@ -16,6 +16,7 @@ import { appIntializer } from './_auth/app.initializer';
 import { AuthenticationService } from './_services/authentication.service';
 import { JwtInterceptor } from './_auth/jwt.interceptor';
 import { ErrorInterceptor } from './_auth/error.interceptor';
+import { SignUpPageComponent } from './sign-up-page/sign-up-page.component';
 
 // Frontend JWTs provided by: https://jasonwatmore.com/post/2022/12/08/angular-14-jwt-authentication-with-refresh-tokens-example-tutorial
 
@@ -28,7 +29,8 @@ import { ErrorInterceptor } from './_auth/error.interceptor';
     AddItemsPageComponent,
     SearchBarComponent,
     SettingsPageComponent,
-    CreateItemPageComponent
+    CreateItemPageComponent,
+    SignUpPageComponent
   ],
   imports: [
     BrowserModule,

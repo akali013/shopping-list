@@ -9,7 +9,7 @@ body {
 .confirmation-popup {
   position: fixed;
   font-size: 20px;
-  color: purple;
+  color: rgb(0, 128, 43);
   right: 3%;
   bottom: 3%;
   background-color: rgb(252, 239, 215);

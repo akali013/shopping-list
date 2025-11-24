@@ -44,6 +44,10 @@ export class LoginPageComponent implements OnInit {
     })
   }
 
+  goToSignUp(): void {
+    this.router.navigate(["/signup"]);
+  }
+
   constructor(private authenticationService: AuthenticationService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
