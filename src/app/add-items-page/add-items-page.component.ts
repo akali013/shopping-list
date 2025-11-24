@@ -4,6 +4,7 @@ import { ItemsService } from '../_services/items.service';
 import { Observable, Subject, debounceTime, distinctUntilChanged, switchMap } from 'rxjs';
 import { Item } from '../_models/item';
 import { ShoppingListItemService } from '../_services/shopping-list-item.service';
+import { ConfirmationService } from '../_services/confirmation.service';
 
 @Component({
   selector: 'app-add-items-page',
@@ -14,13 +15,12 @@ export class AddItemsPageComponent implements OnInit {
   listItems: Item[] = [];
   searchedItems: Item[] = [];
   private searchTerms = new Subject<string>();
-  showConfirmation = false;
 
   addItem(itemName: string) {
     this.shoppingListService.addItem(itemName).subscribe({
       next: () => {
-        this.showConfirmation = true;
-        setTimeout(() => this.showConfirmation = false, 2000);
+        this.confirmationService.confirmationMessage.next("Added!");
+        this.confirmationService.showConfirmationMessage();
       }
     });
   }
@@ -33,7 +33,7 @@ export class AddItemsPageComponent implements OnInit {
     this.searchTerms.next(searchTerm);
   }
 
-  constructor(private itemsService: ItemsService, private shoppingListService: ShoppingListItemService) { }
+  constructor(private itemsService: ItemsService, private shoppingListService: ShoppingListItemService, private confirmationService: ConfirmationService) { }
 
   ngOnInit(): void {
     this.getItems();
