@@ -6,7 +6,15 @@
       <li *ngFor="let item of searchedItems" class="list-item" [class.checked]="item.isChecked">
         {{item.name}} ({{item.quantity}})
 
-        <div class="button-container">
+        <form *ngIf="editedItem == item.name" class="quantity-form" (ngSubmit)="updateQuantity(item)">
+          <label for="quantity-input" class="quantity-label">Quantity: </label>
+          <input id="quantity-input" type="number" min=1 placeholder="New quantity..." class="quantity-input"
+            [formControl]="quantityInput" />
+
+          <button type="submit" class="quantity-submit-button">Save</button>
+        </form>
+
+        <div class="button-container" *ngIf="editedItem !== item.name">
           <button class="check-button" (click)="checkItem(item)" *ngIf="!item.isChecked">
             <img src="../../assets/images/check.svg" class="check-image">
 
@@ -20,6 +28,14 @@
 
             <div class="button-tooltip">
               Uncheck
+            </div>
+          </button>
+
+          <button class="edit-button" (click)="editItemQuantity(item)">
+            <img src="assets/images/edit.svg" class="edit-image">
+
+            <div class="button-tooltip">
+              Edit Quantity
             </div>
           </button>
 
@@ -40,7 +56,15 @@
       <li *ngFor="let item of listItems" class="list-item" [class.checked]="item.isChecked">
         {{item.name}} ({{item.quantity}})
 
-        <div class="button-container">
+        <form *ngIf="editedItem == item.name" class="quantity-form" (ngSubmit)="updateQuantity(item)">
+          <label for="quantity-input" class="quantity-label">Quantity: </label>
+          <input id="quantity-input" type="number" min=1 placeholder="New quantity..." class="quantity-input"
+            [formControl]="quantityInput" />
+
+          <button type="submit" class="quantity-submit-button">Save</button>
+        </form>
+
+        <div class="button-container" *ngIf="editedItem !== item.name">
           <button class="check-button" (click)="checkItem(item)" *ngIf="!item.isChecked">
             <img src="../../assets/images/check.svg" class="check-image">
 
@@ -54,6 +78,14 @@
 
             <div class="button-tooltip">
               Uncheck
+            </div>
+          </button>
+
+          <button class="edit-button" (click)="editItemQuantity(item)">
+            <img src="assets/images/edit.svg" class="edit-image">
+
+            <div class="button-tooltip">
+              Edit Quantity
             </div>
           </button>
 

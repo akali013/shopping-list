@@ -39,14 +39,38 @@ img {
   margin: 1%;
 }
 
-.check-button, .delete-button {
+.quantity-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.quantity-label {
+  font-size: 18px;
+  margin-right: 5px;
+}
+
+.quantity-input {
+  padding: 5px;
+  font-size: 16px;
+}
+
+.quantity-submit-button {
+  background-color: aquamarine;
+  border-radius: 2px;
+  padding: 10px;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.check-button,
+.delete-button,
+.edit-button {
   position: relative;
 }
 
 .button-tooltip {
   position: absolute;
-  right: 1%;
-  bottom: -45%;
   color: white;
   background-color: black;
   padding: 4px;
@@ -55,10 +79,27 @@ img {
   font-size: 18px;
   opacity: 0;
   transition: opacity 0.5s;
+  white-space: nowrap;
+}
+
+.check-button .button-tooltip {
+  right: 10%;
+  bottom: -45%;
+}
+
+.edit-button .button-tooltip {
+  right: -25%;
+  bottom: -45%;
+}
+
+.delete-button .button-tooltip {
+  right: 7%;
+  bottom: -45%;
 }
 
 .check-button:hover .button-tooltip,
-.delete-button:hover .button-tooltip {
+.delete-button:hover .button-tooltip,
+.edit-button:hover .button-tooltip {
   opacity: 1;
 }
 
@@ -77,12 +118,16 @@ img {
   filter: invert(16%) sepia(88%) saturate(7500%) hue-rotate(0deg) brightness(104%) contrast(118%);
 }
 
+.edit-image {
+  width: 50px;
+}
+
 .delete-image {
   width: 50px;
   filter: invert(16%) sepia(88%) saturate(90000%) hue-rotate(0deg) brightness(104%) contrast(118%);
 }
 
-.empty-list-text, 
+.empty-list-text,
 .loading-text {
   margin-top: 10%;
   font-weight: 500;

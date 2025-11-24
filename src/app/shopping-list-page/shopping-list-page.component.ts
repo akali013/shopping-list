@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ShoppingListItem } from '../_models/shopping-list-item';
 import { ShoppingListItemService } from '../_services/shopping-list-item.service';
+import { FormControl, Validators } from '@angular/forms';
+import { ConfirmationService } from '../_services/confirmation.service';
+import { ErrorService } from '../_services/error.service';
 
 @Component({
   selector: 'app-shopping-list-page',
@@ -11,6 +14,8 @@ export class ShoppingListPageComponent implements OnInit {
   listItems: ShoppingListItem[] = [];
   searchedItems: ShoppingListItem[] = [];
   loading = false;
+  editedItem = "";
+  quantityInput = new FormControl(1, Validators.required);
 
   getItems() {
     this.loading = true;
@@ -27,6 +32,30 @@ export class ShoppingListPageComponent implements OnInit {
     item.isChecked = !item.isChecked;
     this.shoppingListService.updateItem(item).subscribe();
     this.sortItems();
+  }
+
+  editItemQuantity(item: ShoppingListItem) {
+    this.editedItem = item.name;
+  }
+
+  updateQuantity(item: ShoppingListItem) {
+    if (this.quantityInput.value == null) {
+      this.errorService.errorMessage.next("You must enter a number.");
+      this.errorService.showErrorMessage();
+      return;
+    }
+    
+    const newItem: ShoppingListItem = { ...item };
+    newItem.quantity = this.quantityInput.value!;
+      this.shoppingListService.updateItem(newItem).subscribe({
+        next: () => {
+          this.confirmationService.confirmationMessage.next("Item updated!");
+          this.confirmationService.showConfirmationMessage();
+          // Refresh affected item to show updated quantity
+          item.quantity = newItem.quantity;
+          this.editedItem = "";
+        }
+      });
   }
 
   deleteItem(item: ShoppingListItem) {
@@ -48,7 +77,7 @@ export class ShoppingListPageComponent implements OnInit {
     });
   }
 
-  constructor(private shoppingListService: ShoppingListItemService) { }
+  constructor(private shoppingListService: ShoppingListItemService, private confirmationService: ConfirmationService, private errorService: ErrorService) { }
 
   ngOnInit(): void {
     this.getItems();
