@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { AuthenticationService } from '../_services/authentication.service';
 import { ErrorService } from '../_services/error.service';
+import { ConfirmationService } from '../_services/confirmation.service';
 
 @Component({
   selector: 'app-sign-up-page',
@@ -10,7 +11,6 @@ import { ErrorService } from '../_services/error.service';
   styleUrls: ['./sign-up-page.component.css']
 })
 export class SignUpPageComponent implements OnInit {
-  showConfirmation = false;
   signUpForm = new FormGroup({
     "email": new FormControl("", Validators.required),
     "password": new FormControl("", Validators.required),
@@ -46,16 +46,15 @@ export class SignUpPageComponent implements OnInit {
 
     this.authenticationService.createAccount(this.email?.value!, this.password?.value!).subscribe({
       next: async () => {
-        console.log("Account created");
-        this.showConfirmation = true;
-        await setTimeout(() => this.showConfirmation = true, 3000);
+        this.confirmationService.confirmationMessage.next("Account created!");
+        this.confirmationService.showConfirmationMessage();
         this.returnToLogin();
       }
     });
   }
 
 
-  constructor(private router: Router, private authenticationService: AuthenticationService, private errorService: ErrorService) { }
+  constructor(private router: Router, private authenticationService: AuthenticationService, private errorService: ErrorService, private confirmationService: ConfirmationService) { }
 
   ngOnInit(): void {
   }

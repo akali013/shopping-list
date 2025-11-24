@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { AuthenticationService } from '../_services/authentication.service';
 import { ErrorService } from '../_services/error.service';
+import { ConfirmationService } from '../_services/confirmation.service';
 
 @Component({
   selector: 'app-settings-page',
@@ -10,7 +11,6 @@ import { ErrorService } from '../_services/error.service';
 })
 export class SettingsPageComponent implements OnInit {
   isEditing: boolean = false;
-  showConfirmation = false;
 
   credentialsForm = new FormGroup({
     email: new FormControl({ value: "", disabled: !this.isEditing }, Validators.required),
@@ -43,8 +43,8 @@ export class SettingsPageComponent implements OnInit {
     else {
       this.authenticationService.changeCredentials(this.email?.value!, this.password?.value!).subscribe({
         next: () => {
-          this.showConfirmation = true;
-          setTimeout(() => this.showConfirmation = false, 3000);
+          this.confirmationService.confirmationMessage.next("Information updated!");
+          this.confirmationService.showConfirmationMessage();
         }
       });
     }
@@ -54,7 +54,7 @@ export class SettingsPageComponent implements OnInit {
     this.authenticationService.logout();
   }
 
-  constructor(private authenticationService: AuthenticationService, private errorService: ErrorService) { }
+  constructor(private authenticationService: AuthenticationService, private errorService: ErrorService, private confirmationService: ConfirmationService) { }
 
   ngOnInit(): void {
   }

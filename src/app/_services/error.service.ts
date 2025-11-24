@@ -7,10 +7,12 @@ import { BehaviorSubject } from 'rxjs';
 export class ErrorService {
   showError: BehaviorSubject<boolean> = new BehaviorSubject(false);
   errorMessage: BehaviorSubject<string> = new BehaviorSubject("");
+  private timeoutId: NodeJS.Timeout | undefined;
 
   showErrorMessage() {
+    clearTimeout(this.timeoutId || "");
     this.showError.next(true);
-    setTimeout(() => this.showError.next(false), 5000);
+    this.timeoutId = setTimeout(() => this.showError.next(false), 5000);
   }
 
   constructor() { }
