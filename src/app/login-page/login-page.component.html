@@ -8,8 +8,14 @@
     <label for="password-i">Password:</label>
     <input id="password-i" type="password" formControlName="password" class="login-input" />
 
-    <button type="submit" class="submit-button" [disabled]="loading">
-      Log In
-    </button>
+    <div class="buttons-container">
+      <button type="submit" class="submit-button" [disabled]="loading">
+        Log In
+      </button>
+
+      <button type="button" class="sign-up-button" [disabled]="loading" (click)="goToSignUp()">
+        Sign Up
+      </button>
+    </div>
   </form>
 </div>

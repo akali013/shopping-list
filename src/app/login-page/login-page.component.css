@@ -12,6 +12,12 @@
   width: 50%;
 }
 
+.buttons-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .login-input {
   margin-top: 10px;
   margin-bottom: 10px;
@@ -27,5 +33,18 @@
   font-weight: bold;
   border: none;
   border-radius: 10px;
+  width: 40%;
+  cursor: pointer;
+}
+
+.sign-up-button {
+  margin-top: 2%;
+  background-color: rgb(107, 234, 238);
+  padding: 25px;
+  font-size: 28px;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  width: 40%;
   cursor: pointer;
 }

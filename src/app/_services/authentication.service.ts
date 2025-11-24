@@ -63,7 +63,14 @@ export class AuthenticationService {
     );
   }
 
+  createAccount(email: string, password: string): Observable<any> {
+    return this.http.post<any>(`${environment.apiUrl}/users/signup`, { email, password }, this.httpOptions).pipe(
+      tap(_ => console.log("Created Account")),
+      catchError(this.handleError("createAccount", ""))
+    );
+  }
 
+  
   private refreshTokenTimeout?: NodeJS.Timeout;
 
   private startRefreshTokenTimer(): void {
