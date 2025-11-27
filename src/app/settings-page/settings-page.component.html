@@ -10,6 +10,10 @@
         Edit
       </button>
 
+      <button class="cancel-button" type="button" *ngIf="isEditing" (click)="isEditing = !isEditing">
+        Cancel
+      </button>
+      
       <button class="save-button" type="submit" *ngIf="isEditing">
         Save
       </button>

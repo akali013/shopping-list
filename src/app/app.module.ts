@@ -21,6 +21,7 @@ import { SignUpPageComponent } from './sign-up-page/sign-up-page.component';
 // Angular Material Components
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
+import { MatButtonModule } from "@angular/material/button";
 
 
 // Frontend JWTs provided by: https://jasonwatmore.com/post/2022/12/08/angular-14-jwt-authentication-with-refresh-tokens-example-tutorial
@@ -43,7 +44,8 @@ import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatButtonModule
   ],
   providers: [
     { provide: APP_INITIALIZER, useFactory: appIntializer, multi: true, deps: [AuthenticationService] },

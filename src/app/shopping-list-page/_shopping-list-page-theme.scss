@@ -20,4 +20,10 @@
     background-color: mat.get-color-from-palette($accent-palette, "darker");
     color: mat.get-color-from-palette($primary-palette, "text-contrast");
   }
+
+  .check-button,
+  .edit-button,
+  .delete-button {
+    background-color: mat.get-color-from-palette($primary-palette, "darker");
+  }
 }

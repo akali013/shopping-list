@@ -4,56 +4,62 @@
   </div>
 
   <div class="right-section">
-    <button class="list-button" [class.active-button]="selectedPage == 'list'" (click)="changeActivePage('list')">
-      <a routerLink="/home">
+    <a routerLink="/home" class="page-link">
+      <button class="list-button" [class.active-button]="selectedPage == 'list'" (click)="changeActivePage('list')">
+
         <img class="list-image" src="../../assets/images/list.svg" />
-      </a>
 
-      <div class="button-tooltip">
-        Shopping List
-      </div>
-    </button>
 
-    <button class="add-button" [class.active-button]="selectedPage == 'add'" (click)="changeActivePage('add')">
-      <a routerLink="/add">
+        <div class="button-tooltip">
+          Shopping List
+        </div>
+      </button>
+    </a>
+
+    <a routerLink="/add" class="page-link">
+      <button class="add-button" [class.active-button]="selectedPage == 'add'" (click)="changeActivePage('add')">
         <img class="add-image" src="../../assets/images/add.svg" />
-      </a>
 
-      <div class="button-tooltip">
-        Add Items
-      </div>
-    </button>
+        <div class="button-tooltip">
+          Add Items
+        </div>
+      </button>
+    </a>
 
-    <button class="create-button" [class.active-button]="selectedPage == 'create'" (click)="changeActivePage('create')">
-      <a routerLink="/create">
+    <a routerLink="/create" class="page-link">
+      <button class="create-button" [class.active-button]="selectedPage == 'create'"
+        (click)="changeActivePage('create')">
         <img class="create-image" src="../../assets/images/create.svg" />
-      </a>
 
-      <div class="button-tooltip">
-        Create Item
-      </div>
-    </button>
+        <div class="button-tooltip">
+          Create Item
+        </div>
+      </button>
+    </a>
 
-    <button class="settings-button" [class.active-button]="selectedPage == 'settings'" (click)="changeActivePage('settings')">
-      <a routerLink="/settings">
-        <img class="settings-image" src="../../assets/images/settings.svg" />
-      </a>
-      
-      <div class="button-tooltip">
-        Settings
-      </div>
-    </button>
+    <a routerLink="/settings" class="page-link">
+      <button class="settings-button" [class.active-button]="selectedPage == 'settings'"
+        (click)="changeActivePage('settings')">
+          <img class="settings-image" src="../../assets/images/settings.svg" />
 
-    <button class="mode-button" (click)="toggleDarkMode()">
-      <img class="mode-image" src="../../assets/images/dark.svg" *ngIf="!darkModeEnabled" />
-      <img class="mode-image" src="../../assets/images/light.svg" *ngIf="darkModeEnabled" />
+        <div class="button-tooltip">
+          Settings
+        </div>
+      </button>
+    </a>
 
-      <div class="button-tooltip" *ngIf="!darkModeEnabled">
-        Dark Mode
-      </div>
-      <div class="button-tooltip" *ngIf="darkModeEnabled">
-        Light Mode
-      </div>
-    </button>
+    <a class="page-link">
+      <button class="mode-button" (click)="toggleDarkMode()">
+        <img class="mode-image" src="../../assets/images/dark.svg" *ngIf="!darkModeEnabled" />
+        <img class="mode-image" src="../../assets/images/light.svg" *ngIf="darkModeEnabled" />
+
+        <div class="button-tooltip" *ngIf="!darkModeEnabled">
+          Dark Mode
+        </div>
+        <div class="button-tooltip" *ngIf="darkModeEnabled">
+          Light Mode
+        </div>
+      </button>
+    </a>
   </div>
 </header>
