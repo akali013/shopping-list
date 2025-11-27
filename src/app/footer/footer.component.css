@@ -1,0 +1,33 @@
+.footer-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 75px;
+  width: 100%;
+}
+
+.page-link {
+  display: flex;
+  justify-content: center;
+}
+
+.list-button,
+.add-button,
+.settings-button,
+.create-button {
+  padding: 3%;
+  border: none;
+  display: flex;
+  justify-content: center;
+}
+
+.list-image,
+.add-image,
+.create-image,
+.settings-image {
+  width: 50px;
+}

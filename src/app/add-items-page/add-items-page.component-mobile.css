@@ -1,0 +1,19 @@
+@media (max-width: 715px) {
+  .container {
+    margin-top: 10vh;
+  }
+
+  .items-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 20px;
+    column-gap: 10px;
+    height: 70vh;
+  }
+
+  .grid-button {
+    width: 190px;
+    height: 190px;
+    font-size: 30px;
+  }
+}

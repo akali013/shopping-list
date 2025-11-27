@@ -9,7 +9,7 @@ import { ConfirmationService } from '../_services/confirmation.service';
 @Component({
   selector: 'app-add-items-page',
   templateUrl: './add-items-page.component.html',
-  styleUrls: ['./add-items-page.component.css']
+  styleUrls: ['./add-items-page.component.css', './add-items-page.component-mobile.css']
 })
 export class AddItemsPageComponent implements OnInit {
   listItems: Item[] = [];

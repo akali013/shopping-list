@@ -4,7 +4,7 @@ import { ItemsService } from "../_services/items.service";
 @Component({
   selector: 'app-search-bar',
   templateUrl: './search-bar.component.html',
-  styleUrls: ['./search-bar.component.css']
+  styleUrls: ['./search-bar.component.css', './search-bar.component-mobile.css']
 })
 export class SearchBarComponent implements OnInit {
   @Output() searchEvent = new EventEmitter();

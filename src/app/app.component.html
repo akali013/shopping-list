@@ -9,4 +9,6 @@
   <div class="error-popup" *ngIf="showError">
     Error: {{errorMessage}}
   </div>
+
+  <app-footer *ngIf="user && usingMobileDevice"></app-footer>
 </div>

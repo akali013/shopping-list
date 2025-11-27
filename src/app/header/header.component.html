@@ -3,8 +3,8 @@
     <a routerLink="/home" class="home-link">Shopping List.</a>
   </div>
 
-  <div class="right-section">
-    <a routerLink="/home" class="page-link">
+  <div class="right-section" [class.mobile-spacing]="usingMobileDevice">
+    <a routerLink="/home" class="page-link" *ngIf="!usingMobileDevice">
       <button class="list-button" [class.active-button]="selectedPage == 'list'" (click)="changeActivePage('list')">
 
         <img class="list-image" src="../../assets/images/list.svg" />
@@ -16,7 +16,7 @@
       </button>
     </a>
 
-    <a routerLink="/add" class="page-link">
+    <a routerLink="/add" class="page-link" *ngIf="!usingMobileDevice">
       <button class="add-button" [class.active-button]="selectedPage == 'add'" (click)="changeActivePage('add')">
         <img class="add-image" src="../../assets/images/add.svg" />
 
@@ -26,7 +26,7 @@
       </button>
     </a>
 
-    <a routerLink="/create" class="page-link">
+    <a routerLink="/create" class="page-link" *ngIf="!usingMobileDevice">
       <button class="create-button" [class.active-button]="selectedPage == 'create'"
         (click)="changeActivePage('create')">
         <img class="create-image" src="../../assets/images/create.svg" />
@@ -37,7 +37,7 @@
       </button>
     </a>
 
-    <a routerLink="/settings" class="page-link">
+    <a routerLink="/settings" class="page-link" *ngIf="!usingMobileDevice">
       <button class="settings-button" [class.active-button]="selectedPage == 'settings'"
         (click)="changeActivePage('settings')">
           <img class="settings-image" src="../../assets/images/settings.svg" />

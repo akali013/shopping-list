@@ -1,0 +1,9 @@
+@media (max-width: 715px) {
+  .header-container {
+    font-size: 30px;
+  }
+
+  .left-section {
+    padding-left: 5px;
+  }
+}

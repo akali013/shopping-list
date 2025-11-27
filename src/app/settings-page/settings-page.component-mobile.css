@@ -1,0 +1,9 @@
+@media (max-width: 715px) {
+  .container {
+    margin-top: 20%;
+  }
+
+  .settings-form {
+    width: 70%;
+  }
+}

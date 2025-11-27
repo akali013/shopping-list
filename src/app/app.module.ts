@@ -22,6 +22,7 @@ import { SignUpPageComponent } from './sign-up-page/sign-up-page.component';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
 import { MatButtonModule } from "@angular/material/button";
+import { FooterComponent } from './footer/footer.component';
 
 
 // Frontend JWTs provided by: https://jasonwatmore.com/post/2022/12/08/angular-14-jwt-authentication-with-refresh-tokens-example-tutorial
@@ -36,7 +37,8 @@ import { MatButtonModule } from "@angular/material/button";
     SearchBarComponent,
     SettingsPageComponent,
     CreateItemPageComponent,
-    SignUpPageComponent
+    SignUpPageComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

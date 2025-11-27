@@ -4,6 +4,7 @@ import { User } from './_models/user';
 import { ErrorService } from './_services/error.service';
 import { ConfirmationService } from './_services/confirmation.service';
 import { DarkModeService } from './_services/dark-mode.service';
+import { UserService } from './_services/user.service';
 
 @Component({
   selector: 'app-root',
@@ -17,12 +18,14 @@ export class AppComponent {
   confirmationMessage = "";
   showConfirmation = false;
   darkModeEnabled = false;
+  usingMobileDevice = false;
 
   constructor(
     private authenticationService: AuthenticationService, 
     private errorService: ErrorService, 
     private confirmationService: ConfirmationService,
-    private darkModeService: DarkModeService
+    private darkModeService: DarkModeService,
+    private userService: UserService
   ) {
     this.authenticationService.user.subscribe(u => this.user = u);
     this.errorService.errorMessage.subscribe(message => this.errorMessage = message);
@@ -30,5 +33,6 @@ export class AppComponent {
     this.confirmationService.confirmationMessage.subscribe(message => this.confirmationMessage = message);
     this.confirmationService.showConfirmation.subscribe(bool => this.showConfirmation = bool);
     this.darkModeService.darkModeEnabled.subscribe(mode => this.darkModeEnabled = mode);
+    this.usingMobileDevice = this.userService.usingMobileDevice;
   }
 }

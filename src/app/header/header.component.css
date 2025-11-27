@@ -27,6 +27,11 @@
   padding-right: 5px;
 }
 
+.mobile-spacing {
+  display: flex;
+  justify-content: end;
+}
+
 .page-link {
   margin: 0 3%;
   display: flex;
@@ -93,22 +98,10 @@
   opacity: 1;
 }
 
-.list-image {
-  width: 50px;
-}
-
-.add-image {
-  width: 50px;
-}
-
-.settings-image {
-  width: 50px;
-}
-
-.create-image {
-  width: 50px;
-}
-
+.list-image,
+.add-image,
+.create-image,
+.settings-image,
 .mode-image {
   width: 50px;
 }
