@@ -28,6 +28,14 @@ img {
 .shopping-list {
   padding: 0;
   list-style: none;
+  height: 65vh;
+  overflow-y: scroll;
+  scrollbar-width: none;
+}
+
+/* Hide scrollbar in Chrome, Safari, and Edge */
+.shopping-list::-webkit-scrollbar {
+  display: none;
 }
 
 .list-item {
@@ -37,6 +45,7 @@ img {
   border: 2px solid black;
   padding: 0 20px;
   margin: 1%;
+  font-weight: 600;
 }
 
 .quantity-form {

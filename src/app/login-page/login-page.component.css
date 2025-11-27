@@ -9,7 +9,7 @@
 .login-form {
   display: flex;
   flex-direction: column;
-  width: 50%;
+  width: 20%;
 }
 
 .buttons-container {
@@ -33,18 +33,18 @@
   font-weight: bold;
   border: none;
   border-radius: 10px;
-  width: 40%;
+  width: 90%;
   cursor: pointer;
 }
 
 .sign-up-button {
-  margin-top: 2%;
+  margin-top: 10%;
   background-color: rgb(107, 234, 238);
   padding: 25px;
   font-size: 28px;
   font-weight: bold;
   border: none;
   border-radius: 10px;
-  width: 40%;
+  width: 90%;
   cursor: pointer;
 }

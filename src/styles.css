@@ -4,6 +4,7 @@ body {
   /* header is 75px */
   margin-top: 75px;
   font-family: "Manrope", Arial;
+  margin: 0;
 }
 
 .confirmation-popup {
@@ -26,4 +27,18 @@ body {
   background-color: rgb(252, 239, 215);
   font-weight: bold;
   padding: 20px;
+}
+
+.dark-mode {
+  background-color: rgb(55, 55, 55);
+}
+
+.dark-mode .confirmation-popup {
+  background-color: rgb(149, 117, 205);
+  color: rgb(137, 253, 176);
+}
+
+.dark-mode .error-popup {
+  background-color: rgb(149, 117, 205);
+  color: red;
 }
