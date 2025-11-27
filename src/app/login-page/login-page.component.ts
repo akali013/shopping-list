@@ -6,7 +6,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-login-page',
   templateUrl: './login-page.component.html',
-  styleUrls: ['./login-page.component.css']
+  styleUrls: ['./login-page.component.css', './login-page.component-mobile.css']
 })
 export class LoginPageComponent implements OnInit {
   loginForm = new FormGroup({

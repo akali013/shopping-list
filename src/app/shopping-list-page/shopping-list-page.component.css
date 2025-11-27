@@ -111,18 +111,9 @@ img {
   opacity: 1;
 }
 
-.check-image {
-  width: 50px;
-}
-
-.uncheck-image {
-  width: 50px;
-}
-
-.edit-image {
-  width: 50px;
-}
-
+.check-image,
+.uncheck-image,
+.edit-image,
 .delete-image {
   width: 50px;
 }

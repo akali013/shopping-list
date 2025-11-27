@@ -8,7 +8,7 @@ import { ConfirmationService } from '../_services/confirmation.service';
 @Component({
   selector: 'app-sign-up-page',
   templateUrl: './sign-up-page.component.html',
-  styleUrls: ['./sign-up-page.component.css']
+  styleUrls: ['./sign-up-page.component.css', './sign-up-page.component-mobile.css']
 })
 export class SignUpPageComponent implements OnInit {
   signUpForm = new FormGroup({

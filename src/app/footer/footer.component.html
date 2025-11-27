@@ -1,0 +1,26 @@
+<footer class="footer-container">
+  <a routerLink="/home" class="page-link">
+    <button class="list-button" [class.active-button]="selectedPage == 'list'" (click)="changeActivePage('list')">
+      <img class="list-image" src="../../assets/images/list.svg" />
+    </button>
+  </a>
+
+  <a routerLink="/add" class="page-link">
+    <button class="add-button" [class.active-button]="selectedPage == 'add'" (click)="changeActivePage('add')">
+      <img class="add-image" src="../../assets/images/add.svg" />
+    </button>
+  </a>
+
+  <a routerLink="/create" class="page-link">
+    <button class="create-button" [class.active-button]="selectedPage == 'create'" (click)="changeActivePage('create')">
+      <img class="create-image" src="../../assets/images/create.svg" />
+    </button>
+  </a>
+
+  <a routerLink="/settings" class="page-link">
+    <button class="settings-button" [class.active-button]="selectedPage == 'settings'"
+      (click)="changeActivePage('settings')">
+      <img class="settings-image" src="../../assets/images/settings.svg" />
+    </button>
+  </a>
+</footer>

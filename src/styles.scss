@@ -5,6 +5,7 @@
 @use "../src/app/create-item-page/create-item-page-theme" as createItemPage;
 @use "../src/app/settings-page/settings-page-theme" as settingsPage;
 @use "../src/app/search-bar/search-bar-theme" as searchBar;
+@use "../src/app/footer/footer-theme" as footer;
 
 @include mat.core();
 
@@ -118,6 +119,7 @@ $dark-theme: mat.define-dark-theme((
 @include createItemPage.color($light-theme);
 @include settingsPage.color($light-theme);
 @include searchBar.color($light-theme);
+@include footer.color($light-theme);
 
 // Apply the dark theme when the ".dark-mode" CSS class is applied to the body
 .dark-mode {
@@ -129,4 +131,5 @@ $dark-theme: mat.define-dark-theme((
   @include createItemPage.color($dark-theme);
   @include settingsPage.color($dark-theme);
   @include searchBar.color($dark-theme);
+  @include footer.color($dark-theme);
 }

@@ -9,6 +9,7 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class UserService {
+  usingMobileDevice = window.innerWidth < 715;  // Detects if the user is using a mobile device under 715px wide.
 
   constructor(private http: HttpClient, private authenticationService: AuthenticationService) { }
 

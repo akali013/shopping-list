@@ -8,7 +8,7 @@ import { ErrorService } from '../_services/error.service';
 @Component({
   selector: 'app-shopping-list-page',
   templateUrl: './shopping-list-page.component.html',
-  styleUrls: ['./shopping-list-page.component.css']
+  styleUrls: ['./shopping-list-page.component.css', './shopping-list-page.component-mobile.css']
 })
 export class ShoppingListPageComponent implements OnInit {
   listItems: ShoppingListItem[] = [];

@@ -1,0 +1,45 @@
+@media (max-width: 715px) {
+  button {
+    padding: 3px;
+    margin: 3px;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10vh;
+    font-size: 20px;
+  }
+
+  .shopping-list-container {
+    margin-top: 3vh;
+  }
+
+  .shopping-list {
+    height: 70vh;
+  }
+
+  .quantity-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .quantity-label {
+    font-size: 18px;
+  }
+
+  .quantity-input {
+    padding: 5px;
+    width: 50px;
+    font-size: 16px;
+  }
+
+  .check-image,
+  .uncheck-image,
+  .edit-image,
+  .delete-image {
+    width: 40px;
+  }
+}

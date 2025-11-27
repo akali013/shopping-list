@@ -7,7 +7,7 @@ import { ConfirmationService } from '../_services/confirmation.service';
 @Component({
   selector: 'app-settings-page',
   templateUrl: './settings-page.component.html',
-  styleUrls: ['./settings-page.component.css']
+  styleUrls: ['./settings-page.component.css', './settings-page.component-mobile.css']
 })
 export class SettingsPageComponent implements OnInit {
   isEditing: boolean = false;
