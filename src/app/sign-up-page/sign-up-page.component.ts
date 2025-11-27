@@ -13,7 +13,7 @@ import { ConfirmationService } from '../_services/confirmation.service';
 export class SignUpPageComponent implements OnInit {
   signUpForm = new FormGroup({
     "email": new FormControl("", Validators.required),
-    "password": new FormControl("", Validators.required),
+    "password": new FormControl("", [Validators.required, Validators.minLength(8)]),
     "retypePassword": new FormControl("", Validators.required)
   });
 
@@ -32,12 +32,16 @@ export class SignUpPageComponent implements OnInit {
   }
 
   createAccount(): void {
-    if (this.email?.value! == "" || this.password?.value == "") {
+    if (this.password?.value?.length! < 8) {
+      this.errorService.errorMessage.next("Your password must be at least 8 characters long.");
+      this.errorService.showErrorMessage();
+      return;
+    }
+    if (this.email?.value! == "" && this.password?.value == "") {
       this.errorService.errorMessage.next("You must enter an email and password.");
       this.errorService.showErrorMessage();
       return;
     };
-
     if (this.password?.value !== this.retypePassword?.value) {
       this.errorService.errorMessage.next("Your passwords must match.");
       this.errorService.showErrorMessage();
