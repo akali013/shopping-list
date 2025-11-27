@@ -1,0 +1,132 @@
+@use "@angular/material" as mat;
+@use "../src/app/header/header-theme" as header;
+@use "../src/app/shopping-list-page/shopping-list-page-theme" as shoppingListPage;
+@use "../src/app/add-items-page/add-items-page-theme" as addItemsPage;
+@use "../src/app/create-item-page/create-item-page-theme" as createItemPage;
+@use "../src/app/settings-page/settings-page-theme" as settingsPage;
+@use "../src/app/search-bar/search-bar-theme" as searchBar;
+
+@include mat.core();
+
+$primary-hues: (
+  50: #EDE7F6,
+  100: #D1C4E9,
+  200: #B39DDB,
+  300: #9575CD,
+  400: #7E57C2,
+  500: #673AB7,
+  600: #5E35B1,
+  700: #512DA8,
+  800: #4527A0,
+  900: #311B92,
+  contrast: (
+    50: rgba(black, 1),
+    100: rgba(black, 0.9),
+    200: rgba(black, 0.87),
+    300: rgba(black, 0.85),
+    400: white,
+    500: white,
+    600: white,
+    700: white,
+    800: white,
+    900: white
+  )
+);
+
+$accent-hues: (
+  50: #E8F5E9,
+  100: #C8E6C9,
+  200: #A5D6A7,
+  300: #81C784,
+  400: #66BB6A,
+  500: #4CAF50,
+  600: #43A047,
+  700: #388E3C,
+  800: #2E7D32,
+  900: #1B5E20,
+  contrast: (
+    50: black,
+    100: black,
+    200: black,
+    300: black,
+    400: black,
+    500: black,
+    600: black,
+    700: black,
+    800: white,
+    900: white
+  )
+);
+
+$warn-hues: (
+  50: #FBE9E7,
+  100: #FFCCBC,
+  200: #FFAB91,
+  300: #FF8A65,
+  400: #FF7043,
+  500: #FF5722,
+  600: #F4511E,
+  700: #E64A19,
+  800: #D84315,
+  900: #BF360C,
+  contrast: (
+    50: black,
+    100: black,
+    200: black,
+    300: black,
+    400: black,
+    500: rgba(black, 0.87),
+    600: rgba(black, 0.87),
+    700: rgba(black, 0.87),
+    800: rgba(black, 0.87),
+    900: white
+  )
+);
+
+// Light theme
+$primary-light-palette: mat.define-palette($primary-hues, 300, 100, 500, 900);
+$accent-light-palette: mat.define-palette($accent-hues, 300, 100, 500, 900);
+$warn-light-palette: mat.define-palette($warn-hues, 300, 100, 500, 900);
+
+$light-theme: mat.define-light-theme((
+  color: (
+    primary: $primary-light-palette,
+    accent: $accent-light-palette,
+    warn: $warn-light-palette
+  )
+));
+
+// Dark theme
+$primary-dark-palette: mat.define-palette($primary-hues, 800, 400, 900, 300);
+$accent-dark-palette: mat.define-palette($accent-hues, 800, 400, 900, 300);
+$warn-dark-palette: mat.define-palette($warn-hues, 800, 400, 900, 300);
+
+$dark-theme: mat.define-dark-theme((
+  color: (
+    primary: $primary-dark-palette,
+    accent: $accent-dark-palette,
+    warn: $warn-dark-palette
+  )
+));
+
+// Apply light theme by default
+@include mat.core-theme($light-theme);
+@include mat.all-component-themes($light-theme);
+@include header.color($light-theme);
+@include shoppingListPage.color($light-theme);
+@include addItemsPage.color($light-theme);
+@include createItemPage.color($light-theme);
+@include settingsPage.color($light-theme);
+@include searchBar.color($light-theme);
+
+// Apply the dark theme when the ".dark-mode" CSS class is applied to the body
+.dark-mode {
+  @include mat.core-theme($dark-theme);
+  @include mat.all-component-themes($dark-theme);
+  @include header.color($dark-theme);
+  @include shoppingListPage.color($dark-theme);
+  @include addItemsPage.color($dark-theme);
+  @include createItemPage.color($dark-theme);
+  @include settingsPage.color($dark-theme);
+  @include searchBar.color($dark-theme);
+}

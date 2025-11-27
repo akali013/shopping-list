@@ -6,42 +6,41 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 2%;
-  background-color: rgb(233, 255, 111);
   height: 75px;
   font-size: 50px;
   font-weight: bold;
+  width: 100%;
 }
 
 .left-section {
+  padding-left: 20px;
   white-space: nowrap;
 }
 
 .home-link {
-  color: rgb(89, 0, 161);
   text-decoration: none;
 }
 
 .right-section {
   display: flex;
-  margin-right: 13%;
+  width: 400px;
+  padding-right: 5px;
 }
 
+.list-button,
 .add-button,
 .settings-button,
-.create-button {
+.create-button,
+.mode-button {
   position: relative;
-  margin-left: 20%;
-  padding: 2%;
-  background-color: snow;
+  margin-left: 5%;
+  padding: 1%;
   border: none;
   cursor: pointer;
 }
 
 .button-tooltip {
   position: absolute;
-  bottom: -60%;
-  right: -55%;
   color: white;
   background-color: black;
   padding: 4px;
@@ -53,10 +52,41 @@
   white-space: nowrap;
 }
 
+.list-button .button-tooltip {
+  bottom: -60%;
+  right: -65%;
+}
+
+.add-button .button-tooltip {
+  bottom: -60%;
+  right: -40%;
+}
+
+.create-button .button-tooltip {
+  bottom: -60%;
+  right: -50%;
+}
+
+.settings-button .button-tooltip {
+  bottom: -60%;
+  right: -30%;
+}
+
+.mode-button .button-tooltip {
+  bottom: -60%;
+  right: -50%;
+}
+
+.list-button:hover .button-tooltip,
 .add-button:hover .button-tooltip,
 .settings-button:hover .button-tooltip,
-.create-button:hover .button-tooltip {
+.create-button:hover .button-tooltip,
+.mode-button:hover .button-tooltip {
   opacity: 1;
+}
+
+.list-image {
+  width: 40px;
 }
 
 .add-image {
@@ -77,4 +107,8 @@
 .create-image {
   width: 40px;
   filter: invert(63%) sepia(40%) saturate(7149%) hue-rotate(89deg) brightness(117%) contrast(112%);
+}
+
+.mode-image {
+  width: 40px;
 }

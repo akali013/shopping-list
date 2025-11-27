@@ -18,6 +18,11 @@ import { JwtInterceptor } from './_auth/jwt.interceptor';
 import { ErrorInterceptor } from './_auth/error.interceptor';
 import { SignUpPageComponent } from './sign-up-page/sign-up-page.component';
 
+// Angular Material Components
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
+
+
 // Frontend JWTs provided by: https://jasonwatmore.com/post/2022/12/08/angular-14-jwt-authentication-with-refresh-tokens-example-tutorial
 
 @NgModule({
@@ -37,12 +42,13 @@ import { SignUpPageComponent } from './sign-up-page/sign-up-page.component';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatProgressSpinnerModule
   ],
   providers: [
-    {provide: APP_INITIALIZER, useFactory: appIntializer, multi: true, deps: [AuthenticationService]},
-    {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true},
-    {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true}
+    { provide: APP_INITIALIZER, useFactory: appIntializer, multi: true, deps: [AuthenticationService] },
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }
   ],
   bootstrap: [AppComponent]
 })

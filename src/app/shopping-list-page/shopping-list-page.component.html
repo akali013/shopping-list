@@ -101,9 +101,7 @@
     </ul>
   </div>
 
-  <div class="loading-text" *ngIf="loading">
-    Loading...
-  </div>
+  <mat-spinner color="accent" *ngIf="loading"></mat-spinner>
 
   <div class="empty-list-text" *ngIf="listItems.length <= 0 && !loading">
     No items found.

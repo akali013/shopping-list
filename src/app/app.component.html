@@ -1,10 +1,12 @@
-<app-header *ngIf="user"></app-header>
-<router-outlet></router-outlet>
+<div [class.dark-mode]="darkModeEnabled" class="app-background">
+  <app-header *ngIf="user"></app-header>
+  <router-outlet></router-outlet>
 
-<div class="confirmation-popup" *ngIf="showConfirmation">
-  {{confirmationMessage}}
-</div>
+  <div class="confirmation-popup" *ngIf="showConfirmation">
+    {{confirmationMessage}}
+  </div>
 
-<div class="error-popup" *ngIf="showError">
-  Error: {{errorMessage}}
+  <div class="error-popup" *ngIf="showError">
+    Error: {{errorMessage}}
+  </div>
 </div>
