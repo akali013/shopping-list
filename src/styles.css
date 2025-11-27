@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 body {
-  
+
   /* header is 75px */
   margin-top: 75px;
   font-family: "Manrope", Arial;
@@ -41,4 +41,16 @@ body {
 .dark-mode .error-popup {
   background-color: rgb(149, 117, 205);
   color: red;
+}
+
+@media (max-width: 715px) {
+  .confirmation-popup {
+    right: 5%;
+    bottom: 10%;
+  }
+
+  .error-popup {
+    right: 5%;
+    bottom: 10%;
+  }
 }
