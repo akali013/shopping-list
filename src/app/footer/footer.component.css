@@ -19,8 +19,9 @@
 .add-button,
 .settings-button,
 .create-button {
-  padding: 3%;
+  padding: 10%;
   border: none;
+  border-radius: 50%;
   display: flex;
   justify-content: center;
 }

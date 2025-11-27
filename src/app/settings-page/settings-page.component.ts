@@ -14,7 +14,7 @@ export class SettingsPageComponent implements OnInit {
 
   credentialsForm = new FormGroup({
     email: new FormControl({ value: this.authenticationService.userValue?.email, disabled: !this.isEditing }, Validators.required),
-    password: new FormControl({ value: "", disabled: !this.isEditing }, Validators.required)
+    password: new FormControl({ value: "", disabled: !this.isEditing }, [Validators.required, Validators.minLength(8)])
   });
 
   get email() {
@@ -36,18 +36,23 @@ export class SettingsPageComponent implements OnInit {
     this.email?.disable();
     this.password?.disable();
 
-    if (this.email?.value == "" || this.password?.value == "") {
+    if (this.password?.value?.length! < 8) {
+      this.errorService.errorMessage.next("Your password must be at least 8 characters long.");
+      this.errorService.showErrorMessage();
+      return;
+    }
+    if (this.email?.value == "" && this.password?.value == "") {
       this.errorService.errorMessage.next("You must enter an email and password.");
       this.errorService.showErrorMessage();
+      return;
     }
-    else {
-      this.authenticationService.changeCredentials(this.email?.value!, this.password?.value!).subscribe({
-        next: () => {
-          this.confirmationService.confirmationMessage.next("Information updated!");
-          this.confirmationService.showConfirmationMessage();
-        }
-      });
-    }
+
+    this.authenticationService.changeCredentials(this.email?.value!, this.password?.value!).subscribe({
+      next: () => {
+        this.confirmationService.confirmationMessage.next("Information updated!");
+        this.confirmationService.showConfirmationMessage();
+      }
+    });
   }
 
   logout() {
