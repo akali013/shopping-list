@@ -1,6 +1,7 @@
 <div class="container">
   <app-search-bar (searchEvent)="searchItems($event)"></app-search-bar>
 
+  <!-- Search list -->
   <div class="shopping-list-container" *ngIf="searchedItems.length > 0">
     <ul class="shopping-list">
       <li *ngFor="let item of searchedItems" class="list-item" [class.checked]="item.isChecked">
@@ -51,8 +52,9 @@
     </ul>
   </div>
 
+  <!-- Default list -->
   <div class="shopping-list-container" *ngIf="listItems.length > 0 && searchedItems.length <= 0">
-    <ul class="shopping-list">
+    <ul class="shopping-list" [@itemAnimation]>
       <li *ngFor="let item of listItems" class="list-item" [class.checked]="item.isChecked">
         {{item.name}} ({{item.quantity}})
 

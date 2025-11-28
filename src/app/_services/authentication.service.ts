@@ -58,14 +58,12 @@ export class AuthenticationService {
 
   changeCredentials(email: string, password: string): Observable<any> {
     return this.http.put<any>(`${environment.apiUrl}/users/credentials`, { email, password }, this.httpOptions).pipe(
-      tap(_ => console.log("Changed credentials")),
       catchError(this.handleError("changeCredentials", ""))
     );
   }
 
   createAccount(email: string, password: string): Observable<any> {
     return this.http.post<any>(`${environment.apiUrl}/users/signup`, { email, password }, this.httpOptions).pipe(
-      tap(_ => console.log("Created Account")),
       catchError(this.handleError("createAccount", ""))
     );
   }

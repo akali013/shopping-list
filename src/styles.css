@@ -54,3 +54,8 @@ body {
     bottom: 10%;
   }
 }
+
+/* Animation for switching between light and dark modes */
+* {
+  transition: color 0.5s ease-out, background-color 0.5s ease-out;
+}

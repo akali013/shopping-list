@@ -14,8 +14,6 @@ export class UserService {
   constructor(private http: HttpClient, private authenticationService: AuthenticationService) { }
 
   getUserById(id: string): Observable<User> {
-    return this.http.get<User>(`${environment.apiUrl}/users/${id}`).pipe(
-      tap(user => console.log(`Fetched user: ${user}`))
-    );
+    return this.http.get<User>(`${environment.apiUrl}/users/${id}`);
   }
 }

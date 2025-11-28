@@ -4,11 +4,13 @@ import { ShoppingListItemService } from '../_services/shopping-list-item.service
 import { FormControl, Validators } from '@angular/forms';
 import { ConfirmationService } from '../_services/confirmation.service';
 import { ErrorService } from '../_services/error.service';
+import { itemAnimation } from '../animations';
 
 @Component({
   selector: 'app-shopping-list-page',
   templateUrl: './shopping-list-page.component.html',
-  styleUrls: ['./shopping-list-page.component.css', './shopping-list-page.component-mobile.css']
+  styleUrls: ['./shopping-list-page.component.css', './shopping-list-page.component-mobile.css'],
+  animations: [itemAnimation]
 })
 export class ShoppingListPageComponent implements OnInit {
   listItems: ShoppingListItem[] = [];

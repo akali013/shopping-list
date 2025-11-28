@@ -17,7 +17,6 @@ export class ItemsService {
   getItems(): Observable<Item[]> {
     return this.http.get<Item[]>(this.apiUrl)
       .pipe(
-        tap(_ => console.log("got list items")),
         catchError(this.handleError("getItems", []))
       );
   }
@@ -27,10 +26,7 @@ export class ItemsService {
       name: itemName,
     };
     
-    return this.http.post<Item>(this.apiUrl, item, this.httpOptions)
-      .pipe(
-        tap(_ => console.log("added item"))
-      );
+    return this.http.post<Item>(this.apiUrl, item, this.httpOptions);
   }
 
   searchItems(searchTerm: string): Observable<Item[]> {
@@ -40,10 +36,6 @@ export class ItemsService {
     }
 
     return this.http.get<Item[]>(`${this.apiUrl}/search/${searchTerm}`).pipe(
-      tap(items => items.length ? 
-          console.log(`Found items matching "${searchTerm}"`) :
-          console.log(`No items matching "${searchTerm}"`)
-      ),
       catchError(this.handleError<Item[]>("searchItems", []))
     );
   }
