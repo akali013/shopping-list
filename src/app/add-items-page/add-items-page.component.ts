@@ -5,11 +5,13 @@ import { Observable, Subject, debounceTime, distinctUntilChanged, switchMap } fr
 import { Item } from '../_models/item';
 import { ShoppingListItemService } from '../_services/shopping-list-item.service';
 import { ConfirmationService } from '../_services/confirmation.service';
+import { gridButtonAnimation } from '../animations';
 
 @Component({
   selector: 'app-add-items-page',
   templateUrl: './add-items-page.component.html',
-  styleUrls: ['./add-items-page.component.css', './add-items-page.component-mobile.css']
+  styleUrls: ['./add-items-page.component.css', './add-items-page.component-mobile.css'],
+  animations: [gridButtonAnimation]
 })
 export class AddItemsPageComponent implements OnInit {
   listItems: Item[] = [];

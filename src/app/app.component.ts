@@ -5,11 +5,14 @@ import { ErrorService } from './_services/error.service';
 import { ConfirmationService } from './_services/confirmation.service';
 import { DarkModeService } from './_services/dark-mode.service';
 import { UserService } from './_services/user.service';
+import { ChildrenOutletContexts } from '@angular/router';
+import { fadeAnimation, confirmationPopUpAnimation, errorPopUpAnimation } from './animations';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  animations: [fadeAnimation, confirmationPopUpAnimation, errorPopUpAnimation]
 })
 export class AppComponent {
   user?: User | null;
@@ -21,11 +24,12 @@ export class AppComponent {
   usingMobileDevice = false;
 
   constructor(
-    private authenticationService: AuthenticationService, 
-    private errorService: ErrorService, 
+    private authenticationService: AuthenticationService,
+    private errorService: ErrorService,
     private confirmationService: ConfirmationService,
     private darkModeService: DarkModeService,
-    private userService: UserService
+    private userService: UserService,
+    private contexts: ChildrenOutletContexts
   ) {
     this.authenticationService.user.subscribe(u => this.user = u);
     this.errorService.errorMessage.subscribe(message => this.errorMessage = message);
@@ -34,5 +38,10 @@ export class AppComponent {
     this.confirmationService.showConfirmation.subscribe(bool => this.showConfirmation = bool);
     this.darkModeService.darkModeEnabled.subscribe(mode => this.darkModeEnabled = mode);
     this.usingMobileDevice = this.userService.usingMobileDevice;
+  }
+
+  // Get the specific animation defined for each route in app-routing.module.ts
+  getRouteAnimationData() {
+    return this.contexts.getContext("primary")?.route?.snapshot?.data?.["animation"];
   }
 }

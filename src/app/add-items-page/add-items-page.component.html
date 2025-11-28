@@ -7,7 +7,7 @@
     </button>
   </div>
 
-  <div class="items-grid" *ngIf="searchedItems.length <= 0">
+  <div class="items-grid" *ngIf="searchedItems.length <= 0 && listItems.length > 0" [@gridButtonAnimation]>
     <button class="grid-button" *ngFor="let item of listItems" (click)="addItem(item.name)">
       {{item.name}}
     </button>

@@ -1,12 +1,12 @@
-<div [class.dark-mode]="darkModeEnabled" class="app-background">
+<div [class.dark-mode]="darkModeEnabled" class="app-background" [@routeAnimations]="getRouteAnimationData()">
   <app-header *ngIf="user"></app-header>
   <router-outlet></router-outlet>
 
-  <div class="confirmation-popup" *ngIf="showConfirmation">
+  <div class="confirmation-popup" *ngIf="showConfirmation" [@confirmationPopUpAnimation]>
     {{confirmationMessage}}
   </div>
 
-  <div class="error-popup" *ngIf="showError">
+  <div class="error-popup" *ngIf="showError" [@errorPopUpAnimation]>
     Error: {{errorMessage}}
   </div>
 

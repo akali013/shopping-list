@@ -47,7 +47,8 @@ import { FooterComponent } from './footer/footer.component';
     ReactiveFormsModule,
     HttpClientModule,
     MatProgressSpinnerModule,
-    MatButtonModule
+    MatButtonModule,
+    BrowserAnimationsModule
   ],
   providers: [
     { provide: APP_INITIALIZER, useFactory: appIntializer, multi: true, deps: [AuthenticationService] },

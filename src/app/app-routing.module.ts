@@ -11,10 +11,10 @@ import { SignUpPageComponent } from './sign-up-page/sign-up-page.component';
 const routes: Routes = [
   { path: "login", component: LoginPageComponent },
   { path: "signup", component: SignUpPageComponent },
-  { path: "home", component: ShoppingListPageComponent, canActivate: [AuthGuard] },
-  { path: "add", component: AddItemsPageComponent, canActivate: [AuthGuard] },
-  { path: "settings", component: SettingsPageComponent, canActivate: [AuthGuard] },
-  { path: "create", component: CreateItemPageComponent, canActivate: [AuthGuard] },
+  { path: "home", component: ShoppingListPageComponent, canActivate: [AuthGuard], data: { animation: "HomePage" } },
+  { path: "add", component: AddItemsPageComponent, canActivate: [AuthGuard], data: { animation: "AddItemsPage" } },
+  { path: "settings", component: SettingsPageComponent, canActivate: [AuthGuard], data: { animation: "SettingsPage" } },
+  { path: "create", component: CreateItemPageComponent, canActivate: [AuthGuard], data: { animation: "CreateItemPage" } },
   { path: "**", redirectTo: "home", pathMatch: "full" }
 ];
 
