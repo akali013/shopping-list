@@ -11,7 +11,7 @@ import { environment } from 'src/environments/environment';
 export class UserService {
   usingMobileDevice = window.innerWidth < 715;  // Detects if the user is using a mobile device under 715px wide.
 
-  constructor(private http: HttpClient, private authenticationService: AuthenticationService) { }
+  constructor(private http: HttpClient) { }
 
   getUserById(id: string): Observable<User> {
     return this.http.get<User>(`${environment.apiUrl}/users/${id}`);
