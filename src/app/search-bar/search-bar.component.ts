@@ -13,7 +13,7 @@ export class SearchBarComponent implements OnInit {
     this.searchEvent.emit(searchTerm);
   }
 
-  constructor(private itemsService: ItemsService) { }
+  constructor() { }
 
   ngOnInit(): void {
   }
