@@ -26,8 +26,8 @@ Upon logging in, a user will be shown a header and possibly a footer depending o
 - [Shopping List page](#shopping-list-page)
 - [Add Items page](#add-items-page)
 - [Create Item page](#create-item-page)
-- [Settings page](#settings-page)
-- [Dark/Light mode](#darklight-mode)
+- [Settings page](#settings-page-gear)
+- [Dark/Light mode](#darklight-mode-moonsun)
 
 If the user has a smaller screen like a mobile device, they can navigate between the above pages and change the app theme using the buttons in the footer.
 
@@ -44,7 +44,7 @@ This page allows users to create new items for the selection in the [Add Items p
 This page lets the user edit their email and password by clicking the orange Edit button, changing the email and password, and then clicking the Save button. When the information is successfully updated, a confirmation pop up appears in the bottom right. Users may also log out of the app by clicking the Log Out button.
 
 ### JWT Authentication 🔒
-The app supports JSON Web Token (JWT) authentication via a secret and refresh tokens, so users can close the page and still be logged in once they reopen the app. See [Credits](#credits) for implementation details.
+The app supports JSON Web Token (JWT) authentication via a secret and refresh tokens, so users can close the page and still be logged in once they reopen the app. See [Credits](#credits-pray) for implementation details.
 
 ### Dark/Light Mode 🌙☀️
 The last button in the app header/footer that shows a moon or sun image depending on the current theme toggles the app's theme between light and dark modes.
