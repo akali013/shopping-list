@@ -23,19 +23,21 @@ With an account, a user can simply log into the app by entering their email and 
 
 ### Navigation/App Theming
 Upon logging in, a user will be shown a header and possibly a footer depending on the screen size. For large screens, a user can navigate between these pages by clicking their respective buttons in the header:
-- [Shopping List page](shopping-list-page)
-- [Add Items page](add-items-page)
-- Create Item page
+- [Shopping List page](#shopping-list-page)
+- [Add Items page](#add-items-page)
+- [Create Item page](#create-item-page)
 - Settings page
 The last button toggles the app between light and dark modes.
 
 If the user has a smaller screen like a mobile device, they can navigate between the above pages and change the app theme using the buttons in the footer.
 
 ### Shopping List Page
-This page shows the items the user selected in the [Add Items page](add-items-page) with their associated quantities. If a user has no selected items, then a message will appear stating "No items found." Additionally, a user can search items in their list using the search bar, which will match items that contain the same characters in the search query.
+This page shows the items the user selected in the [Add Items page](#add-items-page) with their associated quantities. If a user has no selected items, then a message will appear stating "No items found." Additionally, a user can search items in their list using the search bar, which will match items that contain the same characters in the search query. For each item entry, a user can edit the quantity of an item by clicking the orange button, entering the new quantity, and clicking the Save button where a confirmation pop up then appears in the bottom right. They can also check/uncheck and delete item entries. Checked items will be highlighted in green and placed at the bottom of the list.
 
 ### Add Items Page
+This page shows all the available items that can be added to the user's shopping list. It features a grid of buttons that each represent an item, and when a button is clicked, one of the selected item will be put into the shopping list. Like the [shopping list page](#shopping-list-page), the search bar at the top of the page can filter items via a search query that has the same characters as the desired item. When an item is selected, a confirmation pop up appears in the bottom right of the page.
 
+### Create Item Page
 
 ## JWT Refresh Token Authentication
 The JWT system used in this app is from this tutorial: https://jasonwatmore.com/post/2022/12/08/angular-14-jwt-authentication-with-refresh-tokens-example-tutorial
