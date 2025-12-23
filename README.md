@@ -1,7 +1,7 @@
 # Shopping List Frontend
 This simple app allows users to manage a list of items typically found at grocery stores. A user can add items to a list, change item quantities, check/uncheck items, delete list items, add to the general selection of items, search items, create accounts, and change their associated email and password.
 
-## Technologies Used
+## Technologies Used 
 - Frontend: Angular v14.2.13 and [Angular CLI](https://github.com/angular/angular-cli)
 - Web server: nginx
 - Containerization: Docker v29.1.3 and Docker Desktop v4.5.5
@@ -12,7 +12,7 @@ This simple app allows users to manage a list of items typically found at grocer
 This project is mostly for improving my development skills in Angular, .NET, Microsoft SQL Server, and Docker. It can also be used to actually help people track what groceries they need to buy.
 
 ## Features
-### Create Account/Log In
+### Create Account/Log In 🔑
 Users can create an account with an email and password when they first use the app:
 1. Click the blue Sign Up button.
 2. In the Create New Account page, enter an email and password.
@@ -21,7 +21,7 @@ Users can create an account with an email and password when they first use the a
 
 With an account, a user can simply log into the app by entering their email and password and then clicking the green Log In button. 
 
-### Navigation/App Theming
+### Navigation 🗺️
 Upon logging in, a user will be shown a header and possibly a footer depending on the screen size. For large screens, a user can navigate between these pages by clicking their respective buttons in the header:
 - [Shopping List page](#shopping-list-page)
 - [Add Items page](#add-items-page)
@@ -34,7 +34,7 @@ If the user has a smaller screen like a mobile device, they can navigate between
 ### Shopping List Page
 This page shows the items the user selected in the [Add Items page](#add-items-page) with their associated quantities. If a user has no selected items, then a message will appear stating "No items found." Additionally, a user can search items in their list using the search bar, which will match items that contain the same characters in the search query. For each item entry, a user can edit the quantity of an item by clicking the orange button, entering the new quantity, and clicking the Save button where a confirmation pop up then appears in the bottom right. They can also check/uncheck and delete item entries. Checked items will be highlighted in green and placed at the bottom of the list.
 
-### Add Items Page
+### Add Items Page 
 This page shows all the available items that can be added to the user's shopping list. It features a grid of buttons that each represent an item, and when a button is clicked, one of the selected item will be put into the shopping list. Like the [Shopping List page](#shopping-list-page), the search bar at the top of the page can filter items via a search query that has the same characters as the desired item. When an item is selected, a confirmation pop up appears in the bottom right of the page.
 
 ### Create Item Page
@@ -49,7 +49,7 @@ The app supports JSON Web Token (JWT) authentication via a secret and refresh to
 ### Dark/Light Mode 🌙☀️
 The last button in the app header/footer that shows a moon or sun image depending on the current theme toggles the app's theme between light and dark modes.
 
-## Run the App
+## Run the App 🟢
 To use the app, make sure you have a container runtime like Docker Desktop. Also, you must clone this repository via `git clone https://github.com/akali013/shopping-list` in a terminal.
 
 To start the app, use `docker compose up --build -d` in the `shopping-list` directory.
@@ -57,7 +57,7 @@ To start the app, use `docker compose up --build -d` in the `shopping-list` dire
 > [!Note]
 > Ensure the [backend](https://github.com/akali013/ShoppingListAPI) is also running. Otherwise, you will see an error pop up stating "Error: Please try again later."
 
-## Credits
+## Credits 🙏
 [JWT Refresh Token Authentication Tutorial](https://jasonwatmore.com/post/2022/12/08/angular-14-jwt-authentication-with-refresh-tokens-example-tutorial) by Jason Watmore
 
 [Angular Containerization Docker Guide](https://docs.docker.com/guides/angular/) by Kristiyan Velkov
