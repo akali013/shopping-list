@@ -54,11 +54,14 @@ To use the app, make sure you have a container runtime like Docker Desktop. Also
 
 To start the app, use `docker compose up --build -d` in the `shopping-list` directory.
 
-[!Note]
-Ensure the [backend](https://github.com/akali013/ShoppingListAPI) is also running. Otherwise, you will see an error pop up stating "Error: Please try again later."
+> [!Note]
+> Ensure the [backend](https://github.com/akali013/ShoppingListAPI) is also running. Otherwise, you will see an error pop up stating "Error: Please try again later."
 
 ## Credits
 [JWT Refresh Token Authentication Tutorial](https://jasonwatmore.com/post/2022/12/08/angular-14-jwt-authentication-with-refresh-tokens-example-tutorial) by Jason Watmore
+
 [Angular Containerization Docker Guide](https://docs.docker.com/guides/angular/) by Kristiyan Velkov
+
 [Dark/Light Mode](https://v14.material.angular.dev/guide/theming)
+
 mom and dad
