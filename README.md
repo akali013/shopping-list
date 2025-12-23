@@ -62,6 +62,6 @@ To start the app, use `docker compose up --build -d` in the `shopping-list` dire
 
 [Angular Containerization Docker Guide](https://docs.docker.com/guides/angular/) by Kristiyan Velkov
 
-[Dark/Light Mode](https://v14.material.angular.dev/guide/theming)
+[Dark/Light Mode](https://v14.material.angular.dev/guide/theming) by the Angular Team
 
 mom and dad
