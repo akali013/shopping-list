@@ -1,8 +1,41 @@
-# Shopping List App
-This simple app allows you to manage a shopping list with basic CRUD operations.
-Backend: https://github.com/akali013/ShoppingListAPI
+# Shopping List Frontend
+This simple app allows users to manage a list of items typically found at grocery stores. A user can add items to a list, change item quantities, check/uncheck items, delete list items, add to the general selection of items, search items, create accounts, and change their associated email and password.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.13.
+## Technologies Used
+- Frontend: Angular v14.2.13 and [Angular CLI](https://github.com/angular/angular-cli)
+- Web server: nginx
+- Containerization: Docker v29.1.3 and Docker Desktop v4.5.5
+- [GitHub Actions for Docker image pushing](../.github/workflows/main.yml)
+- [Backend Repository](https://github.com/akali013/ShoppingListAPI)
+
+## Motivation
+This project is mostly for improving my development skills in Angular, .NET, Microsoft SQL Server, and Docker. It can also be used to actually help people track what groceries they need to buy.
+
+## Features
+### Create Account/Log In
+Users can create an account with an email and password when they first use the app:
+1. Click the blue Sign Up button.
+2. In the Create New Account page, enter an email and password.
+3. Click Create Account.
+4. Upon successful account creation, a pop up will appear in the bottom right.
+
+With an account, a user can simply log into the app by entering their email and password and then clicking the green Log In button. 
+
+### Navigation/App Theming
+Upon logging in, a user will be shown a header and possibly a footer depending on the screen size. For large screens, a user can navigate between these pages by clicking their respective buttons in the header:
+- [Shopping List page](shopping-list-page)
+- [Add Items page](add-items-page)
+- Create Item page
+- Settings page
+The last button toggles the app between light and dark modes.
+
+If the user has a smaller screen like a mobile device, they can navigate between the above pages and change the app theme using the buttons in the footer.
+
+### Shopping List Page
+This page shows the items the user selected in the [Add Items page](add-items-page) with their associated quantities. If a user has no selected items, then a message will appear stating "No items found." Additionally, a user can search items in their list using the search bar, which will match items that contain the same characters in the search query.
+
+### Add Items Page
+
 
 ## JWT Refresh Token Authentication
 The JWT system used in this app is from this tutorial: https://jasonwatmore.com/post/2022/12/08/angular-14-jwt-authentication-with-refresh-tokens-example-tutorial
