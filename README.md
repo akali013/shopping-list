@@ -5,7 +5,7 @@ This simple app allows users to manage a list of items typically found at grocer
 - Frontend: Angular v14.2.13 and [Angular CLI](https://github.com/angular/angular-cli)
 - Web server: [nginx](https://nginx.org/en/docs/)
 - Containerization: [Docker](https://www.docker.com/) v29.1.3 and [Docker Desktop](https://www.docker.com/products/docker-desktop/) v4.5.5
-- [GitHub Actions for Docker image pushing](../.github/workflows/main.yml)
+- [GitHub Actions for Docker image pushing](.github/workflows/main.yml)
 - [Backend Repository](https://github.com/akali013/ShoppingListAPI)
 
 ## Motivation
