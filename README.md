@@ -54,6 +54,8 @@ To use the app, make sure you have a container runtime like Docker Desktop. Also
 
 To start the app, use `docker compose up --build -d` in the `shopping-list` directory.
 
+Open the app in your browser by visiting `http://localhost:8080`.
+
 > [!Note]
 > Ensure the [backend](https://github.com/akali013/ShoppingListAPI) is also running. Otherwise, you will see an error pop up stating "Error: Please try again later."
 
