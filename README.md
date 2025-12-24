@@ -55,7 +55,7 @@ Before proceeding, make sure you have a container runtime like [Docker Desktop](
 1. Clone this repository via `git clone https://github.com/akali013/shopping-list` in a terminal.
 2. Navigate to the `shopping-list` directory with `cd .\shopping-list\` in a terminal.
 3. Run `docker compose up --build -d`.
-4. Open the app in your browser by visiting [http://localhost:8080].
+4. Open the app in your browser by visiting [http://localhost:8080](http://localhost:8080).
 
 > [!Note]
 > Ensure the [backend](https://github.com/akali013/ShoppingListAPI) is also running. Otherwise, you will see an error pop up stating "Error: Please try again later."
