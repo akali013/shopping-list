@@ -1,4 +1,4 @@
-<div [class.dark-mode]="darkModeEnabled" [class.light-mode]="!darkModeEnabled" class="app-background" [@routeAnimations]="getRouteAnimationData()">
+<div class="app-background" [@routeAnimations]="getRouteAnimationData()">
   <app-header *ngIf="user"></app-header>
   <router-outlet></router-outlet>
 
