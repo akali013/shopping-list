@@ -111,17 +111,16 @@ $dark-theme: mat.define-dark-theme((
 ));
 
 // Apply light theme by default
-.light-mode {
-  @include mat.core-theme($light-theme);
-  @include mat.all-component-themes($light-theme);
-  @include header.color($light-theme);
-  @include shoppingListPage.color($light-theme);
-  @include addItemsPage.color($light-theme);
-  @include createItemPage.color($light-theme);
-  @include settingsPage.color($light-theme);
-  @include searchBar.color($light-theme);
-  @include footer.color($light-theme);
-}
+@include mat.core-theme($light-theme);
+@include mat.all-component-themes($light-theme);
+@include header.color($light-theme);
+@include shoppingListPage.color($light-theme);
+@include addItemsPage.color($light-theme);
+@include createItemPage.color($light-theme);
+@include settingsPage.color($light-theme);
+@include searchBar.color($light-theme);
+@include footer.color($light-theme);
+
 
 // Apply the dark theme when the ".dark-mode" CSS class is applied to the body
 .dark-mode {

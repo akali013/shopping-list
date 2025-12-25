@@ -1,17 +1,23 @@
-# Comments are provided throughout this file to help you get started.
-# If you need more help, visit the Docker Compose reference guide at
-# https://docs.docker.com/go/compose-spec-reference/
+# Based on: https://docs.docker.com/guides/angular/develop/
 
-# Here the instructions define your application as a service called "server".
-# This service is built from the Dockerfile in the current directory.
-# You can add other services your application may depend on here, such as a
-# database or a cache. For examples, see the Awesome Compose repository:
-# https://github.com/docker/awesome-compose
 services:
-  server:
+  angular-prod:
     build:
       context: .
+      dockerfile: Dockerfile
     environment:
       NODE_ENV: production
     ports:
       - 8080:8080
+
+  angular-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - 4200:4200
+    develop:
+      watch:
+        - action: sync
+          path: .
+          target: /app

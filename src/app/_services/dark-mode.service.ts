@@ -10,6 +10,13 @@ export class DarkModeService {
 
   toggleDarkMode() {
     this.mode.next(!this.mode.value);
+
+    if (this.mode.value) {
+      document.body.classList.add("dark-mode");
+    }
+    else {
+      document.body.classList.remove("dark-mode");
+    }
   }
 
   constructor() { }
