@@ -49,7 +49,7 @@ export class SignUpPageComponent implements OnInit {
     }
 
     this.authenticationService.createAccount(this.email?.value!, this.password?.value!).subscribe({
-      next: async () => {
+      next: () => {
         this.confirmationService.confirmationMessage.next("Account created!");
         this.confirmationService.showConfirmationMessage();
         this.returnToLogin();
