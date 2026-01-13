@@ -33,24 +33,24 @@ export class SignUpPageComponent implements OnInit {
 
   createAccount(): void {
     if (this.password?.value?.length! < 8) {
-      this.errorService.errorMessage.next("Your password must be at least 8 characters long.");
+      this.errorService.sendErrorMessage("Your password must be at least 8 characters long.");
       this.errorService.showErrorMessage();
       return;
     }
     if (this.email?.value! == "" && this.password?.value == "") {
-      this.errorService.errorMessage.next("You must enter an email and password.");
+      this.errorService.sendErrorMessage("You must enter an email and password.");
       this.errorService.showErrorMessage();
       return;
     };
     if (this.password?.value !== this.retypePassword?.value) {
-      this.errorService.errorMessage.next("Your passwords must match.");
+      this.errorService.sendErrorMessage("Your passwords must match.");
       this.errorService.showErrorMessage();
       return;
     }
 
     this.authenticationService.createAccount(this.email?.value!, this.password?.value!).subscribe({
       next: () => {
-        this.confirmationService.confirmationMessage.next("Account created!");
+        this.confirmationService.sendConfirmationMessage("Account created!");
         this.confirmationService.showConfirmationMessage();
         this.returnToLogin();
       }

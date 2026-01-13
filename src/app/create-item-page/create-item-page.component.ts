@@ -16,14 +16,14 @@ export class CreateItemPageComponent implements OnInit {
 
   submitForm() {
     if (this.createItemForm.invalid) {
-      this.errorService.errorMessage.next("You must enter a name.");
+      this.errorService.sendErrorMessage("You must enter a name.");
       this.errorService.showErrorMessage();
       return;
     }
     
     this.itemsService.createItem(this.createItemForm.get("itemName")?.value!).subscribe({
       next: () => {
-        this.confirmationService.confirmationMessage.next("Item created!");
+        this.confirmationService.sendConfirmationMessage("Item created!");
         this.confirmationService.showConfirmationMessage();
       }
     });

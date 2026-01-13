@@ -42,7 +42,7 @@ export class ShoppingListPageComponent implements OnInit {
 
   updateQuantity(item: ShoppingListItem) {
     if (this.quantityInput.value == null) {
-      this.errorService.errorMessage.next("You must enter a number.");
+      this.errorService.sendErrorMessage("You must enter a number.");
       this.errorService.showErrorMessage();
       return;
     }
@@ -51,7 +51,7 @@ export class ShoppingListPageComponent implements OnInit {
     newItem.quantity = this.quantityInput.value!;
       this.shoppingListService.updateItem(newItem).subscribe({
         next: () => {
-          this.confirmationService.confirmationMessage.next("Item updated!");
+          this.confirmationService.sendConfirmationMessage("Item updated!");
           this.confirmationService.showConfirmationMessage();
           // Refresh affected item to show updated quantity
           item.quantity = newItem.quantity;

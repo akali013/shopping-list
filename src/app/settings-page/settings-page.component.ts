@@ -37,19 +37,19 @@ export class SettingsPageComponent implements OnInit {
     this.password?.disable();
 
     if (this.password?.value?.length! < 8) {
-      this.errorService.errorMessage.next("Your password must be at least 8 characters long.");
+      this.errorService.sendErrorMessage("Your password must be at least 8 characters long.");
       this.errorService.showErrorMessage();
       return;
     }
     if (this.email?.value == "" && this.password?.value == "") {
-      this.errorService.errorMessage.next("You must enter an email and password.");
+      this.errorService.sendErrorMessage("You must enter an email and password.");
       this.errorService.showErrorMessage();
       return;
     }
 
     this.authenticationService.changeCredentials(this.email?.value!, this.password?.value!).subscribe({
       next: () => {
-        this.confirmationService.confirmationMessage.next("Information updated!");
+        this.confirmationService.sendConfirmationMessage("Information updated!");
         this.confirmationService.showConfirmationMessage();
       }
     });

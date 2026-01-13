@@ -22,7 +22,7 @@ export class ErrorInterceptor implements HttpInterceptor {
           error = "Please try again later";
         }
 
-        this.errorService.errorMessage.next(error);
+        this.errorService.sendErrorMessage(error);
         this.errorService.showErrorMessage();
       }
       return throwError(() => error);

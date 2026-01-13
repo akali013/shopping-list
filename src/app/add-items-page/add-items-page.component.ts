@@ -21,7 +21,7 @@ export class AddItemsPageComponent implements OnInit {
   addItem(itemName: string) {
     this.shoppingListService.addItem(itemName).subscribe({
       next: () => {
-        this.confirmationService.confirmationMessage.next("Added!");
+        this.confirmationService.sendConfirmationMessage("Added!");
         this.confirmationService.showConfirmationMessage();
       }
     });

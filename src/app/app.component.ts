@@ -29,10 +29,10 @@ export class AppComponent {
     private contexts: ChildrenOutletContexts
   ) {
     this.authenticationService.user.subscribe(u => this.user = u);
-    this.errorService.errorMessage.subscribe(message => this.errorMessage = message);
-    this.errorService.showError.subscribe(bool => this.showError = bool);
-    this.confirmationService.confirmationMessage.subscribe(message => this.confirmationMessage = message);
-    this.confirmationService.showConfirmation.subscribe(bool => this.showConfirmation = bool);
+    this.errorService.errorMessageObservable.subscribe(message => this.errorMessage = message);
+    this.errorService.showErrorObservable.subscribe(bool => this.showError = bool);
+    this.confirmationService.confirmationMessageObservable.subscribe(message => this.confirmationMessage = message);
+    this.confirmationService.showConfirmationObservable.subscribe(bool => this.showConfirmation = bool);
     this.usingMobileDevice = this.userService.usingMobileDevice;
   }
 
